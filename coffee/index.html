@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maison Vert Café — искусство наслаждаться вкусом</title>
+  <meta name="description" content="Maison Vert Café — атмосферное кафе-десертная в Санкт-Петербурге. Авторские десерты, specialty-кофе, сезонные напитки. Бронирование столиков и заказ десертов онлайн."/>
+  <!-- Webfonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="wordmark">Maison Vert Café</div>
+      </div>
+      <nav>
+        <a href="#about">О нас</a>
+        <a href="#menu">Меню</a>
+        <a href="#advantages">Преимущества</a>
+        <a href="#stories">Истории</a>
+        <a href="#contact" class="cta">Забронировать</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="bg" role="img" aria-label="Интерьер кафе"></div>
+    <div class="container">
+      <div class="hero-card">
+        <span class="tag" title="Санкт-Петербург">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10Z"/><circle cx="12" cy="11" r="2.5"/></svg>
+          Санкт-Петербург
+        </span>
+        <h1>Искусство наслаждаться вкусом</h1>
+        <p>Атмосферное кафе-десертная в&nbsp;стиле <em>old money</em>: авторские десерты, specialty-кофе, сезонные напитки и живая музыка по выходным.</p>
+        <div class="hero-cta">
+          <a href="#booking" class="btn primary">Забронировать столик</a>
+          <a href="#menu" class="btn ghost">Посмотреть меню</a>
+        </div>
+        <div class="gold-line"></div>
+        <div class="pill">5 лет на рынке • Сертификаты SCA • Эко-упаковка</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section alt">
+    <div class="container split">
+      <div>
+        <h2>Maison Vert Café — кто мы</h2>
+        <p><strong>Основное направление:</strong> кафе-десертная с авторскими десертами, собственной обжаркой кофе и сезонными напитками.</p>
+        <p><strong>На рынке:</strong> с 2020 года. За это время мы стали местом неспешных встреч и вдохновения в историческом центре города.</p>
+        <div class="card" aria-label="Награды и сертификаты">
+          <h3>Награды и сертификаты</h3>
+          <ul class="list">
+            <li>Лучшее кафе Центрального района — 2023</li>
+            <li>Specialty Coffee Association — сертификаты бариста</li>
+            <li>Участник фестиваля Taste of Saint-Petersburg — 2024</li>
+          </ul>
+        </div>
+        <div class="accordion" style="margin-top:16px">
+          <div class="item">
+            <button aria-expanded="false">Подробнее о нашем меню</button>
+            <div class="content">
+              <p><strong>Десерты:</strong> муссовые торты, тарталетки, макаронс, чизкейки.</p>
+              <p><strong>Напитки:</strong> эспрессо-меню, авторские рафы, чай, лимонады, сезонные напитки.</p>
+              <p><strong>Лёгкие блюда:</strong> круассаны, гранола, тосты с авокадо и бурратой.</p>
+            </div>
+          </div>
+          <div class="item">
+            <button aria-expanded="false">Услуги: заказ, кейтеринг, мероприятия</button>
+            <div class="content">
+              <p>Принимаем заказы онлайн, готовим десерты на праздники, помогаем с частными мероприятиями и уютными фотосессиями.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="grid" id="gallery">
+          <img src="./2a1764188b88a55a637b73026408ebe8.jpg" alt="Тарталетка с ягодами" />
+          <img src="./07e54f03c83acbb8b58c2c83749101ed.jpg" alt="Кофе латте в фарфоре" />
+          <img src="./2177a1ac8d3c636892d72d6668ecd3c3.jpg" alt="Интерьер кафе" />
+          <img src="./9bc97636adf45f6e629013ada1d847bb.jpg" alt="Муссовый торт" />
+          <img src="./93026bf9e12379c5b2099a5a0ff271e8.jpg" alt="Десерт и кофе" />
+          <img src="./af114185e8f0379ed794ce80160c43c9.jpg" alt="Живая музыка на пианино" />
+        </div>
+        <small class="muted">Нажмите на изображение, чтобы увеличить</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Numbers -->
+  <section class="section">
+    <div class="container">
+      <h2>Цифры о компании</h2>
+      <div class="counters" id="counters">
+        <div class="counter"><div class="num" data-target="5">0</div><div class="label">лет на рынке</div></div>
+        <div class="counter"><div class="num" data-target="25">0</div><div class="label">видов десертов</div></div>
+        <div class="counter"><div class="num" data-target="40">0</div><div class="label">посадочных мест</div></div>
+        <div class="counter"><div class="num" data-target="3000">0</div><div class="label">гостей в месяц</div></div>
+        <div class="counter"><div class="num" data-target="15">0</div><div class="label">сортов кофе</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advantages -->
+  <section id="advantages" class="section alt">
+    <div class="container">
+      <h2>Почему нас выбирают</h2>
+      <div class="split">
+        <ul class="list">
+          <li>Авторские десерты и собственная обжарка</li>
+          <li>Эстетика <em>old money</em> — роскошь без показности</li>
+          <li>Эко-упаковка и локальные поставщики</li>
+          <li>Сезонное меню и редкие сорта кофе</li>
+          <li>Отличная локация в центре</li>
+          <li>Живая музыка по выходным</li>
+          <li>Безупречный сервис и фарфор ручной работы</li>
+          <li>Собственная кондитерская лаборатория</li>
+          <li>Программа лояльности</li>
+          <li>Доставка десертов день-в-день</li>
+        </ul>
+        <div class="card">
+          <h3>Гарантии качества</h3>
+          <p>Сертифицированные ингредиенты, соблюдение санитарных норм, возврат/замена при несоответствии, свежесть изделий до 48 часов.</p>
+          <div class="gold-line"></div>
+          <div class="cta">
+            <strong>Акция недели:</strong> «Десерт недели по цене кофе». По будням с 9:00 до 11:00 — кофе 2=1.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu / Product -->
+  <section id="menu" class="section">
+    <div class="container split">
+      <div>
+        <h2>Меню и заказы</h2>
+        <p><strong>Ценовой сегмент:</strong> средний+. Кофе от 250 ₽, десерты от 350 ₽, завтраки от 400 ₽.</p>
+        <div class="timeline">
+          <div class="step"><strong>1.</strong> Готовим ежедневно из свежих ингредиентов</div>
+          <div class="step"><strong>2.</strong> Принимаем заказы онлайн или на месте</div>
+          <div class="step"><strong>3.</strong> Кейтеринг и персональные торт-меню</div>
+          <div class="step"><strong>4.</strong> Доставка десертов в день заказа</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Попробуйте бестселлеры</h3>
+        <ul class="list">
+          <li>Тарт «Maison Vert» с фисташкой и малиной</li>
+          <li>Чизкейк «Невский» с карамелью</li>
+          <li>Макаронс ассорти (6 шт.)</li>
+          <li>Лаванда-раф • Карамельный айс-латте</li>
+        </ul>
+        <a href="#booking" class="btn primary" style="margin-top:8px">Заказать онлайн</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stories & Reviews -->
+  <section id="stories" class="section alt">
+    <div class="container">
+      <h2>Истории успеха и отзывы</h2>
+      <div class="slider" aria-label="Отзывы гостей">
+        <div class="slides" id="slides">
+          <div>
+            <p>«Заказывала десерты на свадьбу — лучшее решение! Гости в восторге, оформление — музейный уровень.»</p>
+            <small>— Алина, невеста • <span class="caps">Event Pro</span></small>
+          </div>
+          <div>
+            <p>«Прихожу как в тихий уголок Парижа. Лучший латте и чизкейк, сервис безупречен.»</p>
+            <small>— Михаил, постоянный гость</small>
+          </div>
+          <div>
+            <p>«Проводили камерный концерт с пианино — атмосфера и акустика идеальные. Спасибо команде!»</p>
+            <small>— Антон, музыкант</small>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn ghost" id="prev">Назад</button>
+          <button class="btn primary" id="next">Далее</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA & Booking -->
+  <section id="booking" class="section">
+    <div class="container">
+      <div class="split">
+        <div>
+          <h2>Забронировать столик или заказать десерт</h2>
+          <p>Оставьте контакты — администратор подтвердит бронь или уточнит детали заказа.</p>
+          <form id="form" class="card" autocomplete="on">
+            <label class="caps">Имя<br/>
+              <input name="name" required placeholder="Ваше имя" class="input">
+            </label>
+            <br/>
+            <label class="caps">Телефон<br/>
+              <input name="phone" required placeholder="+7 (___) ___-__-__" class="input" inputmode="tel">
+            </label>
+            <br/>
+            <label class="caps">Комментарий<br/>
+              <textarea name="msg" rows="3" placeholder="Время, количество гостей или название десерта" class="textarea"></textarea>
+            </label>
+            <br/>
+            <button class="btn primary" type="submit">Отправить заявку</button>
+            <div id="form-status" class="pill" style="display:none;margin-top:10px"></div>
+          </form>
+        </div>
+        <div class="card" id="contact">
+          <h3>Контакты</h3>
+          <p><strong>Адрес:</strong> Санкт-Петербург, наб. реки Фонтанки, 12</p>
+          <p><strong>Время работы:</strong> ежедневно 9:00–22:00</p>
+          <p><strong>Телефон:</strong> +7 (812) 000-00-00</p>
+          <div class="gold-line"></div>
+          <p class="caps">Акции и скидки</p>
+          <ul class="list">
+            <li>10% при первом онлайн-заказе</li>
+            <li>Кофе 2=1 по будням 9:00–11:00</li>
+            <li>7-е посещение — десерт в подарок</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="wordmark">Maison Vert Café</div>
+        </div>
+        <p class="muted">© 2020–2025. Искусство наслаждаться вкусом.</p>
+      </div>
+      <div>
+        <p class="caps">Навигация</p>
+        <p><a href="#about">О нас</a><br><a href="#menu">Меню</a><br><a href="#advantages">Преимущества</a><br><a href="#booking">Бронь</a></p>
+      </div>
+      <div>
+        <p class="caps">Соцсети</p>
+        <p><a href="#">Instagram*</a> · <a href="#">VK</a></p>
+        <small class="muted">*Запрещённая в РФ организация</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <dialog id="lightbox" style="border:none; padding:0; background:transparent">
+    <img id="lightbox-img" alt="Фото" style="max-width:95vw; max-height:85vh; border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,.35);"/>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

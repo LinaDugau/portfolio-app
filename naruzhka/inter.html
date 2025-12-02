@@ -1,0 +1,310 @@
+<?php
+// Проверяем, были ли отправлены данные формы
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    // Настройки подключения к базе данных
+    $host = 'localhost'; // Хост базы данных
+    $db = 'your_database_name'; // Имя базы данных
+    $user = 'your_username'; // Пользователь базы данных
+    $pass = 'your_password'; // Пароль пользователя
+
+    try {
+        // Создаем PDO-подключение
+        $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // Получаем данные из формы
+        $name = htmlspecialchars($_POST['имя']);
+        $phone = htmlspecialchars($_POST['телефон']);
+        $message = htmlspecialchars($_POST['text']);
+        $consent = isset($_POST['sogl']) ? 1 : 0;  // Согласие на обработку данных
+
+        // Подготавливаем SQL-запрос
+        $sql = "INSERT INTO form_submissions (name, phone, message, consent) VALUES (:name, :phone, :message, :consent)";
+        $stmt = $pdo->prepare($sql);
+
+        // Выполняем запрос
+        $stmt->execute([
+            ':name' => $name,
+            ':phone' => $phone,
+            ':message' => $message,
+            ':consent' => $consent
+        ]);
+
+        // Перенаправляем на страницу с подтверждением
+        header('Location: success.html');
+        exit;
+    } catch (PDOException $e) {
+        // Если произошла ошибка
+        echo "Ошибка подключения к базе данных: " . $e->getMessage();
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекламное Агенство Наружка</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        const details = document.querySelectorAll("details");
+
+        details.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const openItem = document.querySelector('details[open]');
+
+                if (openItem) openItem.open = false;
+
+                if (openItem !== item) item.open = true;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <header>
+        <container class="container header-container">
+        <a href="index2.html" class="logot"><img src="./assets/image/logo.svg" alt="Логотип"></a>
+        <nav>
+            <ul>
+                <li><a href="index2.html" style="margin-left: 392px; margin-right: 20px">О компании</a></li>
+                <li>
+                    <a href="index2.html" style="margin-left: 32px;">Услуги<img src="./assets/image/1.svg"></a></a>
+                    <ul>
+                        <li><a href="naruz.html">Наружная реклама</a></li>
+                        <li><a href="#">Интерьерная реклама</a></li>
+                        <li><a href="poligraph.html">Полиграфия</a></li>
+                    </ul>
+                </li>
+                <li><a href="index2.html" style="margin-left: 43.86px">Отзывы</a></li>
+                <li><a href="contacts.html" style="margin-left: 48px">Контакты</a></li>
+                <li><a href="#form-section" class="svaz" style="margin-left: 32px">Обратная связь</a></li>
+            </ul>
+        </nav>
+        </container>
+    </header>
+
+    <main>
+        <div>
+            <div class="container_miumiu">
+                <ol class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a itemprop="url" href="index2.html"><span itemprop="name">Главная страница /&nbsp</span></a></li>
+                    <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Услуги /&nbsp</span></li>
+                    <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Наружная реклама</span></li>
+                </ol>
+            </div>    
+            <h2 class="kiokio">Интерьерная реклама</h2>
+            <div class="container_wai">
+                <details class="details">
+                    <summary class="details__title">
+                        Постеры и модульные картины (диптих, триптих, полиптих)
+                        <div class="accordeon-button"></div>
+                    </summary>
+                    <div class="details__content">
+                        <p><b>Постеры</b> (poster) в настоящее время становятся в России все более модными. Их размещают в домах, квартирах и 
+                            офисных помещениях для украшения интерьеров и придания теплой атмосферы. Правильно подобранные постеры на любой 
+                            вкус не только украшают помещение, но и создают хорошее настроение, уютную атмосферу и спокойствие.</p>
+                            <center><img src="./assets/image/60.jpg" alt="" style="border-radius: 20px; margin-top: 10px; margin-bottom: 10px; width: auto; height: 238px;"></center>
+                            <p>Мы изготавливаем постеры на заказ, любого размера с любым оформлением. Вы сами решаете, какое изображение, 
+                            какого размера, в каком багете и с какими цветовыми оттенками будет Вашим постером.</p>
+                    </div>
+                </details>
+                
+                <details class="details">
+                    <summary class="details__title">
+                        Стенд фон, бренд волл (brand wall), бекстейдж (backstage), пресс волл (press wall)
+                        <div class="accordeon-button"></div>
+                    </summary>
+                    <div class="details__content">
+                        <p><b>Brand Wall</b> – это мобильная конструкция применяемая при проведении различных мероприятий и презентаций. Её 
+                            задачей является создание правильного рабочего фона. Названий у данной конструкции очень много, самые 
+                            распространенные из них: бренд волл (brand wall) , бекстейдж (backstage), прессволл (press wall), стенд 
+                            фон. Такая конструкция может быть как временным изделием, так и многократного пользования. В качестве 
+                            изображения на пресс волл чаще всего наносятся логотипы спонсоров/участников события</p>
+                        <center><img src="./assets/image/61.jpg" alt="" style="border-radius: 20px; margin-top: 10px; margin-bottom: 10px; width: auto; height: 238px;"></center>
+                        <p>Наше агентство осуществляет изготовление брендвол по индивидуальным параметрам заказчика. Основой бренд волл 
+                            служит: баннерная ткань. В качестве несущей рамы используются различные профили.Применение brand wall не ограничивается 
+                            лишь официальными мероприятиями, его можно использовать на промо акциях, детских праздниках, для оформления интерьеров. 
+                            Очень часто press wall заказывают на свадьбу.Указатели концентрируют на себе внимание миллионов людей, т.к. являются 
+                            системой городского ориентирования. Это самый читаемый и достоверный источник информации. Размещение информации на 
+                            городских указателях зарекомендовало себя как недорогой и очень эффективный способ наружной рекламы.</p>
+                    </div>
+                    <div class="accordeon-button"></div>
+                </details>
+                <details class="details">
+                    <summary class="details__title">
+                        Информационные стенды
+                        <div class="accordeon-button"></div>
+                    </summary>
+                    <div class="details__content">
+                        <p>Сейчас крайне сложно представить себе, что в организации оказывающей услуги нет хотя бы одного информационного 
+                            стенда. Трудно представить, как эта компания предоставляет информацию своим покупателям, которые пришли к ним 
+                            в офис или дает информацию своим работникам. Наклейка (стикер) - это изделие, изготовленное на самоклеющемся 
+                            материале. Очень широко используются в рекламных целях ("Реклама и полиграфия"). Они легко и надолго 
+                            прикреиваются к разным поверхностям. Основная цель размещения информационных стендов, демонстрационных щитов 
+                            и досок почета – обеспечение людей необходимой информацией. Удобство такого способа предоставления нужных 
+                            сведений или рекламы неоспоримо – уже множество веков человечество пользуется подобным приемом, при этом 
+                            изменяются только материалы и техника подачи, суть метода остается прежней.</p>
+                        <center><img src="./assets/image/62.jpg" alt="" style="border-radius: 20px; margin-top: 10px; margin-bottom: 10px; width: auto; height: 238px;"></center>
+                        <p>Информационные стенды могут содержать различное количество прозрачных карманов для размещения продукции: 
+                            от одного до двенадцати (при заказе стандартного информационного стенда) и более (при заказе индивидуального 
+                            информационного стенда), могут содержать карманы одинакового размера, или разных.В пластиковых карманах 
+                            информационных стендов могут размещаться тонкие листовки или толстые брошюры, книги в зависимости от толщины 
+                            пластиковых карманов.</p>
+                    </div>
+                    <div class="accordeon-button"></div>
+                </details>
+                <details class="details">
+                    <summary class="details__title">
+                        Фотообои
+                        <div class="accordeon-button"></div>
+                    </summary>
+                    <div class="details__content">
+                        <p>Возможно изготовление фотообоев на заказ для оформления интерьера квартиры, офиса, детской комнаты, 
+                            кухни и других помещений. Фотообои монтируются на стену и другие предметы интерьера: мебель, двери, зеркала.</p>
+                        <center><img src="./assets/image/63.jpg" alt="" style="border-radius: 20px; margin-top: 10px; margin-bottom: 10px; width: auto; height: 238px;"></center>
+                    </div>
+                    <div class="accordeon-button"></div>
+                </details>
+            </div>
+                
+                
+            </div>
+        <section id=form-section>
+            <div class="container_row">
+                <div class="drap">
+                    <div class="bbloki_drap1">
+                        <div class="mav"><h3 class="zs">Нужна консультация или определились с выбором?</h3></div>
+                        <div class="taw"><p class="zx">Мы всегда вам поможем, только заполните анкету!</p>
+                            <p class="zx">Позвоним в течении 5 минут.</p></div>
+                        <div class="liu"><p class="zd">8 905-649-13-55 </p>
+                            <p class="zd">8 905-144-30-26</p></div>
+                    </div>
+                    <div class="bbloki_drap2">
+                        <form method="POST" action="">
+                            <div class="blok_iop">
+                                <div class="iop"><label><input type="text" name='имя' placeholder="Ваше имя"></input></label></div>
+                                <div class="iop"><label><input type="phone" name='телефон' placeholder="Телефон*"></input></label></div>
+                            </div>
+                            <div class="fprma">
+                                <p><textarea rows="7" cols="45" name="text" placeholder="Напишите ваш комментарий..." class="textarea_form"></textarea></p></div>
+                            <input type="checkbox" id="myCheckbox" class="demoCustomCheckbox" name="sogl">
+                                        <label for="myCheckbox" style="padding-top:5px">&nbsp Я согласен на обработку персональных данных</label>
+                                        <!-- <input type="checkbox" id="custom-checkbox" name="sogl"> Соглашаюсь на обработку персональных данных </label>
+                                    </p> -->
+                                <button class="orange">
+                                    ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК
+                                </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container_r">
+            <div class="crap">
+            <div class="bbloki_crap1">
+                <div class="wap">
+                    <a href="index2.html" class="logo1"><img src="./assets/image/logo.svg" alt="Логотип" class="logo1"></a>
+                    <p style="margin-top: 29px">© 2024 Наружка</p>
+                </div>
+                <div class="wap">
+                    <p style="margin-top: 16px" class="mip">Наружка в соцсетях:</p>
+                    <div class="cpap">
+                        <a href="https://vk.com/club28889400"><img src="assets/image/21.svg" style="width: 38px; height: 38px;" class="filter-yellow"></a>
+                        <a href="http://odnoklassniki.ru/#/group/51011496902822"><img src="assets/image/22.svg" style="width: 38px; height: 38px;" class="filter-yellow"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="bbloki_crap2">
+                <p style="margin-bottom: 20px;"><a href="index2.html" class="bolz" >Услуги</a></p>
+                <p style="margin-bottom: 15px;"><a href="naruz.html" class="menz" >Наружная реклама</a></p>
+                <p style="margin-bottom: 15px;"><a href="#" class="menz" >Интерьерная реклама</a></p>
+                <p style="margin-bottom: 20px;"><a href="poligraph.html" class="menz" >Полиграфия</a></p>
+                <a href="index2.html" class="bolz">Отзывы</a>
+            </div>
+            <div class="bbloki_crap3">
+                <p style="margin-bottom: 20px;"><a href="contacts.html" class="bolz">Контакты</a></p>
+                <p class="tuext">601901, Владимирская область, город Ковров, проспект Ленина, 49. <br>
+                    тел./факс: 8-905-649-13-55<br> эл. почта: info@naruzka.ru <br> Офис: пр-т Ленина 49 <br>
+                    Производство: ул. Муромская , 9А</p>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <div class="btn-up btn-up_hide"></div>
+    </div>
+
+    
+    <script>
+        const btnUp = {
+          el: document.querySelector('.btn-up'),
+          scrolling: false,
+          show() {
+            if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+              this.el.classList.remove('btn-up_hide');
+              this.el.classList.add('btn-up_hiding');
+              window.setTimeout(() => {
+                this.el.classList.remove('btn-up_hiding');
+              }, 300);
+            }
+          },
+          hide() {
+            if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+              this.el.classList.add('btn-up_hiding');
+              window.setTimeout(() => {
+                this.el.classList.add('btn-up_hide');
+                this.el.classList.remove('btn-up_hiding');
+              }, 300);
+            }
+          },
+          addEventListener() {
+            // при прокрутке окна (window)
+            window.addEventListener('scroll', () => {
+              const scrollY = window.scrollY || document.documentElement.scrollTop;
+              if (this.scrolling && scrollY > 0) {
+                return;
+              }
+              this.scrolling = false;
+              // если пользователь прокрутил страницу более чем на 200px
+              if (scrollY > 400) {
+                // сделаем кнопку .btn-up видимой
+                this.show();
+              } else {
+                // иначе скроем кнопку .btn-up
+                this.hide();
+              }
+            });
+            // при нажатии на кнопку .btn-up
+            document.querySelector('.btn-up').onclick = () => {
+              this.scrolling = true;
+              this.hide();
+              // переместиться в верхнюю часть страницы
+              window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+              });
+            }
+          }
+        }
+    
+        btnUp.addEventListener();
+      </script>
+</body>
+</html>

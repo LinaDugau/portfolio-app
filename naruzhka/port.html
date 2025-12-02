@@ -1,0 +1,242 @@
+<?php
+// Проверяем, были ли отправлены данные формы
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    // Настройки подключения к базе данных
+    $host = 'localhost'; // Хост базы данных
+    $db = 'your_database_name'; // Имя базы данных
+    $user = 'your_username'; // Пользователь базы данных
+    $pass = 'your_password'; // Пароль пользователя
+
+    try {
+        // Создаем PDO-подключение
+        $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // Получаем данные из формы
+        $name = htmlspecialchars($_POST['имя']);
+        $phone = htmlspecialchars($_POST['телефон']);
+        $message = htmlspecialchars($_POST['text']);
+        $consent = isset($_POST['sogl']) ? 1 : 0;  // Согласие на обработку данных
+
+        // Подготавливаем SQL-запрос
+        $sql = "INSERT INTO form_submissions (name, phone, message, consent) VALUES (:name, :phone, :message, :consent)";
+        $stmt = $pdo->prepare($sql);
+
+        // Выполняем запрос
+        $stmt->execute([
+            ':name' => $name,
+            ':phone' => $phone,
+            ':message' => $message,
+            ':consent' => $consent
+        ]);
+
+        // Перенаправляем на страницу с подтверждением
+        header('Location: success.html');
+        exit;
+    } catch (PDOException $e) {
+        // Если произошла ошибка
+        echo "Ошибка подключения к базе данных: " . $e->getMessage();
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекламное Агенство Наружка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="layout">
+        <header>
+        <container class="container header-container">
+        <a href="index2.html" class="logot"><img src="./assets/image/logo.svg" alt="Логотип"></a>
+        <nav>
+            <ul>
+                <li><a href="index2.html" style="margin-left: 392px; margin-right: 20px">О компании</a></li>
+                <li>
+                    <a href="index2.html" style="margin-left: 32px;">Услуги<img src="./assets/image/1.svg"></a></a>
+                    <ul>
+                        <li><a href="#">Наружная реклама</a></li>
+                        <li><a href="#">Интерьерная реклама</a></li>
+                        <li><a href="#">Полиграфия</a></li>
+                    </ul>
+                </li>
+                <li><a href="index2.html" style="margin-left: 43.86px">Отзывы</a></li>
+                <li><a href="contacts.html" style="margin-left: 48px">Контакты</a></li>
+                <li><a href="#form-section" class="svaz" style="margin-left: 32px">Обратная связь</a></li>
+            </ul>
+        </nav>
+        </container>
+    </header>
+
+    <main>
+        <div>
+            <div class="container_miumiu">
+                <ol class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><a itemprop="url" href="index2.html"><span itemprop="name">Главная страница /&nbsp</span></a></li>
+                    <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem"><span itemprop="name">Портфолио /&nbsp</span></li>
+                </ol>
+            </div>    
+            <h2 class="kiokio">Полиграфия</h2>
+            <div class="contai_o">
+                <h2 class="kiokio">Наружная реклама</h2>
+                <div class="conta_t">
+                    <div class="s"><img src="./assets/image/33.png" alt=""></div>
+                    <div class="k"><img src="./assets/image/34.png" alt=""></div>
+                    <div class="l"><img src="./assets/image/35.png" alt=""></div>
+                    <div class="n"><img src="./assets/image/36.png" alt=""></div>
+                    <div class="m"><img src="./assets/image/37.png" alt=""></div>
+                    <div class="t"><img src="./assets/image/38.png" alt=""></div>
+                </div>
+                <h2 class="kiokio" style="margin-top:15px">Интерьерная реклама</h2>
+                <div class="conta_t">
+                    <div class="s"><img src="./assets/image/39.png" alt=""></div>
+                    <div class="k"><img src="./assets/image/40.png" alt=""></div>
+                    <div class="l"><img src="./assets/image/41.png" alt=""></div>
+                    <div class="n"><img src="./assets/image/42.png" alt=""></div>
+                    <div class="m"><img src="./assets/image/43.png" alt=""></div>
+                    <div class="t"><img src="./assets/image/44.png" alt=""></div>
+                </div>
+                <h2 class="kiokio" style="margin-top:15px">Полиграфия</h2>
+                <div class="conta_t">
+                    <div class="s"><img src="./assets/image/45.png" alt=""></div>
+                    <div class="k"><img src="./assets/image/46.png" alt=""></div>
+                    <div class="l"><img src="./assets/image/47.png" alt=""></div>
+                    <div class="n"><img src="./assets/image/48.png" alt=""></div>
+                    <div class="m"><img src="./assets/image/49.png" alt=""></div>
+                    <div class="t"><img src="./assets/image/50.png" alt=""></div>
+                </div>
+            </div>
+            
+                
+                
+            </div>
+        <section id=form-section>
+            <div class="container_row">
+                <div class="drap">
+                    <div class="bbloki_drap1">
+                        <div class="mav"><h3 class="zs">Нужна консультация или определились с выбором?</h3></div>
+                        <div class="taw"><p class="zx">Мы всегда вам поможем, только заполните анкету!</p>
+                            <p class="zx">Позвоним в течении 5 минут.</p></div>
+                        <div class="liu"><p class="zd">8 905-649-13-55 </p>
+                            <p class="zd">8 905-144-30-26</p></div>
+                    </div>
+                    <div class="bbloki_drap2">
+                        <form method="POST" action="">
+                            <div class="blok_iop">
+                                <div class="iop"><label><input type="text" name='имя' placeholder="Ваше имя"></input></label></div>
+                                <div class="iop"><label><input type="phone" name='телефон' placeholder="Телефон*"></input></label></div>
+                            </div>
+                            <div class="fprma">
+                                <p><textarea rows="7" cols="45" name="text" placeholder="Напишите ваш комментарий..." class="textarea_form"></textarea></p></div>
+                            <input type="checkbox" id="myCheckbox" class="demoCustomCheckbox" name="sogl">
+                                        <label for="myCheckbox" style="padding-top:5px">&nbsp Я согласен на обработку персональных данных</label>
+                                        <!-- <input type="checkbox" id="custom-checkbox" name="sogl"> Соглашаюсь на обработку персональных данных </label>
+                                    </p> -->
+                                <button class="orange">
+                                    ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК
+                                </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container_r">
+            <div class="crap">
+            <div class="bbloki_crap1">
+                <div class="wap">
+                    <a href="index2.html" class="logo1"><img src="./assets/image/logo.svg" alt="Логотип" class="logo1"></a>
+                    <p style="margin-top: 29px">© 2024 Наружка</p>
+                </div>
+                <div class="wap">
+                    <p style="margin-top: 16px" class="mip">Наружка в соцсетях:</p>
+                    <div class="cpap">
+                        <a href="https://vk.com/club28889400"><img src="assets/image/21.svg" style="width: 38px; height: 38px;" class="filter-yellow"></a>
+                        <a href="http://odnoklassniki.ru/#/group/51011496902822"><img src="assets/image/22.svg" style="width: 38px; height: 38px;" class="filter-yellow"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="bbloki_crap2">
+                <p style="margin-bottom: 20px;"><a href="index2.html" class="bolz" >Услуги</a></p>
+                <p style="margin-bottom: 15px;"><a href="#" class="menz" >Наружная реклама</a></p>
+                <p style="margin-bottom: 15px;"><a href="#" class="menz" >Интерьерная реклама</a></p>
+                <p style="margin-bottom: 20px;"><a href="poligraph.html" class="menz" >Полиграфия</a></p>
+                <a href="index2.html" class="bolz">Отзывы</a>
+            </div>
+            <div class="bbloki_crap3">
+                <p style="margin-bottom: 20px;"><a href="contacts.html" class="bolz">Контакты</a></p>
+                <p class="tuext">601901, Владимирская область, город Ковров, проспект Ленина, 49. <br>
+                    тел./факс: 8-905-649-13-55<br> эл. почта: info@naruzka.ru <br> Офис: пр-т Ленина 49 <br>
+                    Производство: ул. Муромская , 9А</p>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <div class="btn-up btn-up_hide"></div>
+    </div>
+
+    <script>
+        const btnUp = {
+          el: document.querySelector('.btn-up'),
+          scrolling: false,
+          show() {
+            if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+              this.el.classList.remove('btn-up_hide');
+              this.el.classList.add('btn-up_hiding');
+              window.setTimeout(() => {
+                this.el.classList.remove('btn-up_hiding');
+              }, 300);
+            }
+          },
+          hide() {
+            if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+              this.el.classList.add('btn-up_hiding');
+              window.setTimeout(() => {
+                this.el.classList.add('btn-up_hide');
+                this.el.classList.remove('btn-up_hiding');
+              }, 300);
+            }
+          },
+          addEventListener() {
+            // при прокрутке окна (window)
+            window.addEventListener('scroll', () => {
+              const scrollY = window.scrollY || document.documentElement.scrollTop;
+              if (this.scrolling && scrollY > 0) {
+                return;
+              }
+              this.scrolling = false;
+              // если пользователь прокрутил страницу более чем на 200px
+              if (scrollY > 400) {
+                // сделаем кнопку .btn-up видимой
+                this.show();
+              } else {
+                // иначе скроем кнопку .btn-up
+                this.hide();
+              }
+            });
+            // при нажатии на кнопку .btn-up
+            document.querySelector('.btn-up').onclick = () => {
+              this.scrolling = true;
+              this.hide();
+              // переместиться в верхнюю часть страницы
+              window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+              });
+            }
+          }
+        }
+    
+        btnUp.addEventListener();
+      </script>
+</body>
+</html>

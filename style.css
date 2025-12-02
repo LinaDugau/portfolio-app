@@ -1,0 +1,344 @@
+/* ===========================
+   Глобальные настройки
+=========================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Quicksand", "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff6fa; /* мягкая база */
+    color: #4a4a4a;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Акварельный эффект на фоне */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle at center,
+        rgba(255, 182, 215, 0.4),
+        rgba(255, 240, 250, 0.2),
+        rgba(220, 180, 255, 0.25),
+        transparent 70%
+    );
+    filter: blur(120px);
+    z-index: -2;
+}
+
+/* АНИМИРОВАННЫЙ АКВАРЕЛЬНЫЙ ФОН */
+body::before,
+body::after,
+body::marker {
+    content: "";
+    position: fixed;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    z-index: -2;
+    background: radial-gradient(circle,
+        rgba(255, 200, 230, 0.45),
+        rgba(230, 180, 255, 0.35),
+        transparent 70%
+    );
+    filter: blur(140px);
+    animation: float 18s infinite ease-in-out alternate;
+}
+
+/* Смещения пятен */
+body::before {
+    top: -200px;
+    left: -200px;
+}
+body::after {
+    bottom: -220px;
+    right: -250px;
+    animation-duration: 22s;
+}
+body::marker {
+    top: 40%;
+    left: 20%;
+    animation-duration: 26s;
+}
+
+/* Движение пастельных пятен */
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(40px, -30px) scale(1.1); }
+    100% { transform: translate(-30px, 20px) scale(0.95); }
+}
+
+/* Контейнеры */
+main, header, footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: fadeIn 1.5s ease;
+}
+
+/* ===========================
+   Анимации
+=========================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hoverGlow {
+    from { box-shadow: 0 0 0 rgba(255, 200, 230, 0.4); }
+    to { box-shadow: 0 0 25px rgba(255, 200, 230, 0.7); }
+}
+
+/* ===========================
+   Header
+=========================== */
+
+/* Делаем header гибким */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+/* Логотип/имя — адаптив */
+header h1 {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    word-break: break-word;
+}
+
+/* Навигация адаптивная */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 15px 0 0 0;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Кнопки меню — адаптивные */
+nav a {
+    padding: 8px 15px;
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
+}
+
+/* Мобильные устройства */
+@media (max-width: 600px) {
+    header {
+        padding: 20px 5px;
+    }
+
+    nav ul {
+        gap: 6px;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===========================
+   Навигация
+=========================== */
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 12px;
+    padding: 0;
+    margin-top: 25px;
+}
+
+/* Красивая пастельная кнопка */
+nav a {
+    text-decoration: none;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #ffeef5, #f8e1f0);
+    border-radius: 25px;
+    color: #7f5673;
+    font-weight: 600;
+    border: 1px solid #f3dce6;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 200, 230, 0.3);
+}
+
+nav a:hover {
+    transform: translateY(-3px);
+    animation: hoverGlow 0.4s alternate infinite ease-in-out;
+}
+
+/* ===========================
+   Заголовки
+=========================== */
+
+h2 {
+    color: #7f5673;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Подсветка под заголовком */
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 5px;
+    border-radius: 10px;
+    margin-top: 6px;
+    background: linear-gradient(90deg, #f3cade, #e7c8ff);
+}
+
+/* ===========================
+   Карточки секций
+=========================== */
+
+section article {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    border-left: 6px solid #f3cade;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+}
+
+section article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(255,200,230,0.4);
+}
+
+/* ===========================
+   Сетки
+=========================== */
+
+#portfolio {
+    display: grid;
+    gap: 20px;
+}
+
+@media (min-width: 700px) {
+    #portfolio {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ===========================
+   Aside
+=========================== */
+
+aside {
+    background: rgba(255, 240, 252, 0.7);
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 16px;
+    border-left: 6px solid #f3cade;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(255,180,230,0.2);
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #7f5673;
+}
+
+
+/* ===========================
+   Адаптивность
+=========================== */
+
+@media (max-width: 600px) {
+
+    header h1 { font-size: 1.7rem; }
+
+    nav a {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+
+    section article { padding: 15px; }
+
+    body { padding: 0 10px; }
+}
+
+
+
+/* Общая стеклянная карточка */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25); /* прозрачное стекло */
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(30, 10, 60, 0.15);
+    padding: 25px;
+    transition: 0.4s ease;
+}
+
+/* Hover эффект глубины */
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(60, 20, 90, 0.25);
+}
+
+/* Стили для ссылок-карточек */
+.glass-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+
+.glass-card-link:hover .glass-card {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(60, 20, 90, 0.25);
+    cursor: pointer;
+}
+
+
+.install-glass{
+    margin:20px auto;
+    padding:14px 26px;
+    border:none;
+    border-radius:18px;
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(15px);
+    color:#7f5673;
+    font-weight:700;
+    font-size:1rem;
+    cursor:pointer;
+    display:none;
+    box-shadow:0 8px 32px rgba(60,20,90,0.2);
+    transition:0.3s ease;
+}
+.install-glass:hover{
+    background:rgba(255,255,255,0.35);
+    transform:translateY(-3px);
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S(HE) фотостудия</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container-thanks container">
+      <h1 class="h1_rules h1_thank">СПАСИБО ЗА БРОНИРОВАНИЕ!</h1>
+      <p class="text-center">
+        Страница обновится сама, если этого не произошло
+        <a href="./index.html" class="grey">нажмите сюда.</a>
+      </p>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
+        const link = document.querySelector("a.grey"); // Получаем ссылку
+        if (link) {
+          window.location.href = link.href; // Переход на указанный сайт
+        }
+      }, 5000); // 10 секунд (10000 миллисекунд)
+    });
+  </script>
+</html>

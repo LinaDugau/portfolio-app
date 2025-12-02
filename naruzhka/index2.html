@@ -1,0 +1,577 @@
+<?php
+// Проверяем, были ли отправлены данные формы
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    // Настройки подключения к базе данных
+    $host = 'localhost'; // Хост базы данных
+    $db = 'your_database_name'; // Имя базы данных
+    $user = 'your_username'; // Пользователь базы данных
+    $pass = 'your_password'; // Пароль пользователя
+
+    try {
+        // Создаем PDO-подключение
+        $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // Получаем данные из формы
+        $name = htmlspecialchars($_POST['имя']);
+        $phone = htmlspecialchars($_POST['телефон']);
+        $message = htmlspecialchars($_POST['text']);
+        $consent = isset($_POST['sogl']) ? 1 : 0;  // Согласие на обработку данных
+
+        // Подготавливаем SQL-запрос
+        $sql = "INSERT INTO form_submissions (name, phone, message, consent) VALUES (:name, :phone, :message, :consent)";
+        $stmt = $pdo->prepare($sql);
+
+        // Выполняем запрос
+        $stmt->execute([
+            ':name' => $name,
+            ':phone' => $phone,
+            ':message' => $message,
+            ':consent' => $consent
+        ]);
+
+        // Перенаправляем на страницу с подтверждением
+        header('Location: success.html');
+        exit;
+    } catch (PDOException $e) {
+        // Если произошла ошибка
+        echo "Ошибка подключения к базе данных: " . $e->getMessage();
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекламное Агенство Наружка</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        const details = document.querySelectorAll("details");
+
+        details.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const openItem = document.querySelector('details[open]');
+
+                if (openItem) openItem.open = false;
+
+                if (openItem !== item) item.open = true;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <header>
+        <container class="container header-container">
+        <a href="#" class="logot"><img src="./assets/image/logo.svg" alt="Логотип"></a>
+        <nav>
+            <ul>
+                <li><a href="#o_komp" style="margin-left: 392px; margin-right: 20px">О компании</a></li>
+                <li>
+                    <a href="#uslugi" style="margin-left: 32px;">Услуги<img src="./assets/image/1.svg"></a></a>
+                    <ul>
+                        <li><a href="naruz.html">Наружная реклама</a></li>
+                        <li><a href="inter.html">Интерьерная реклама</a></li>
+                        <li><a href="poligraph.html">Полиграфия</a></li>
+                    </ul>
+                </li>
+                <li><a href="#otzivi" style="margin-left: 43.86px">Отзывы</a></li>
+                <li><a href="contacts.html" style="margin-left: 48px">Контакты</a></li>
+                <li><a href="#form-section" class="svaz" style="margin-left: 32px">Обратная связь</a></li>
+            </ul>
+        </nav>
+        </container>
+    </header>
+    <main>
+        <div class="content">
+            <div class="slider responsive">
+                <div class="slider-element">
+                    <img src="./assets/image/3.png" alt="" class="bord" style="width: 100%;">
+                    <!-- Сюда вставляешь контент внутри слайдов слайдера первого экрана -->
+                    <div class="nabor">
+                        <h1 class="slide_h1">СОБСТВЕННОЕ ПРОИЗВОДСТВО</h1>
+                    <P class="slide_p1">Объемные буквы,<br>
+                        штендеры,<br>
+                        баннеры<br>
+                        и т.д.</P>
+                        <buttom class="white_buttom"><a href="#uslugi" class="myamya">ПЕРЕЙТИ К УСЛУГАМ</a></buttom>
+                        <buttom class="yellow_buttom"><a href="#form-section" class="tyamya">ОФОРМЛЕНИЕ ЗАКАЗА</a></buttom>
+                    </div>
+                </div>
+                <div class="slider-element">
+                    <img src="./assets/image/25.png" alt="" class="bord" style="width: 100%;">
+                    <!-- Сюда вставляешь контент внутри слайдов слайдера первого экрана -->
+                    <div class="nabor">
+                        <h1 class="slide_h2">РЕКЛАМА НА ЛЮБЫХ ПОВЕРХНОСТЯХ</h1>
+                    <P class="slide_p2">Оформим все по <br>
+                        вашим желаниям<br>
+                        и на любых<br>
+                        поверхностях</P>
+                        <buttom class="white_buttom"><a href="#uslugi" class="myamya">ПЕРЕЙТИ К УСЛУГАМ</a></buttom>
+                        <buttom class="yellow_buttom"><a href="#form-section" class="tyamya">ОФОРМЛЕНИЕ ЗАКАЗА</a></buttom>
+                    </div>
+                </div>
+                <div class="slider-element">
+                    <img src="./assets/image/27.png" alt="" class="bord" style="width: 100%;">
+                    <!-- Сюда вставляешь контент внутри слайдов слайдера первого экрана -->
+                    <div class="nabor">
+                        <h1 class="slide_h3">ОФОРМЛЕНИЕ ТРИПТИХОВ НА ЗАКАЗ</h1>
+                    <P class="slide_p3">Любое изображение,<br>
+                        количество<br>
+                        и лучшее качество<br>
+                        картин</P>
+                        <buttom class="white_buttom"><a href="#uslugi" class="myamya">ПЕРЕЙТИ К УСЛУГАМ</a></buttom>
+                        <buttom class="yellow_buttom"><a href="#form-section" class="tyamya">ОФОРМЛЕНИЕ ЗАКАЗА</a></buttom>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-dots"></div>
+        </div>
+
+        <div class="container_vu">
+            <div class="a"><h2 class="ru"><img src="./assets/image/4.svg" alt="">ОТЧЕТ РАБОТ</h2><p>Качественный фотографический <br>
+                отчет факта выполненных работ</p></div>
+            <div class="b"><h2 class="ru"><img src="./assets/image/5.svg" alt="">>90%</h2><p>охват аудитории <br>г. Ковров</p></div>
+            <div class="c"><h2 class="tu"><img src="./assets/image/6.svg" alt="" style="margin-right: 10px;">УДОБНАЯ ПРОГРАММА</h2><p>Удобная адресная программа рекламных конструкций</p></div>
+        </div>
+
+        <section id="o_komp">
+            <div class="wrap">
+                <div class="bblock"><h2 class="qu">О компании</h2><p class="ri" >ООО РА «Наружка» работает уже более 10 лет.  
+                    За этот период работы мы собрали команду настоящих профессионалов, которые качественно выполняют свою работу.</p><p class="ri">Нам доверяют размещение рекламы одни из ведущих федеральных операторов наружной рекламы г. Москвы, Новосибирска, 
+                    Екатеринбурга, муниципальные заказчики разных уровней, крупнейшие торговые сети, политические партии и т.д.</p></div>
+                <div class="bblock_2"><h2 class="qt">НАРУЖКА</h2>
+                    <div class="prap">
+                        <div class="bblock_3"><h4 class="ti">c <b class="mi">2011</b> года</h4><p>Успешно реализуем классные проекты</p></div>
+                        <div class="bblock_4"><h4 class="ti"><b class="mi">3000</b> м<sup><small>2</small></sup></h4><p>Площадь собственного производства</p></div>
+                        
+                    </div>
+                    <p class="yu"><b>Участник международных ассоциаций</b></p>
+                    <img src="./assets/image/7.jpg" alt="" style="width: 190px; height: auto; margin-top: 20px; margin-right: 80px;">
+                    <img src="./assets/image/8.jpg" alt="" style="width: 228px; height: auto; margin-top: 2px;">
+                </div>
+            </div>
+        </section>
+
+        <section id="uslugi">
+            <div class="container_mi">
+                <h2 class="qw">Услуги</h2>
+                <div class="container_re">
+                    <a href="naruz.html"><div class="g">НАРУЖНАЯ РЕКЛАМА</div></a>
+                    <a href="inter.html"><div class="h">ИНТЕРЬЕРНАЯ РЕКЛАМА</div></a>
+                    <a href="poligraph.html"><div class="e">ПОЛИГРАФИЯ</div></a>
+                </div>
+            </div>
+        </section>
+        
+
+        <div class="container_li">
+            <h2 class="qw">Наши клиенты</h2>
+            <div class="b-rolling-caption">
+                <div class="b-rolling-caption__wrap">
+                    <div class="b-rolling-caption__content">
+                        <div><img src="./assets/ticker-images/Rectangle17.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle19.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle21.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle22.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle23.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle17.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle19.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle21.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle22.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle23.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="b-rolling-caption">
+                <div class="b-rolling-caption__wrap">
+                    <div class="b-rolling-caption__content">
+                        <div><img src="./assets/ticker-images/Rectangle18.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle20.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle24.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle25.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle18.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle20.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle24.png" alt=""></div>
+                        <div><img src="./assets/ticker-images/Rectangle25.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container_ki">
+            <h2 class="qw">Как мы работаем?</h2>
+            <div class="container_po">
+                <div class="x">
+                    <center><img src="./assets/image/13.png" alt="" style="height: 110px; width: 110px; margin-bottom: 12px;"></center>
+                    <h4 class="fg">Стратегия и дизайн</h4>
+                    <p class="io">Мы анализируем возможные решения для вашего проекта, чтобы использовать наиболее подходящий вариант.</p>
+                </div>
+                <div class="z">
+                    <center><img src="./assets/image/14.png" alt="" style="height: 110px; width: 110px; margin-bottom: 12px;"></center>
+                    <h4 class="fg">Качество</h4>
+                    <p class="io">Мы хотим разрабатывать только самые лучшие решения. Качество наших услуг является гарантией того что ваш бизнес всегда будет выделиться среди конкурентов.</p>
+                </div>
+                <div class="y">
+                    <center><img src="./assets/image/15.png" alt="" style="height: 110px; width: 110px; margin-bottom: 12px;"></center>
+                    <h4 class="fg">Разработка<br> и Тестирование</h4>
+                    <p class="io">Наша команда разработчиков всегда делает несколько прототипов, чтобы обеспечить разнообразие выбора.</p>
+                </div>
+              </div>
+        </div>
+
+        <div class="container_mi">
+            <h2 class="qw">Портфолио</h2>
+            <div class="container_re">
+                <a href="port.html"><div class="g">НАРУЖНАЯ РЕКЛАМА</div></a>
+                <a href="port.html"><div class="h">ИНТЕРЬЕРНАЯ РЕКЛАМА</div></a>
+                <a href="port.html"><div class="e">ПОЛИГРАФИЯ</div></a>
+            </div>
+        </div>
+
+        <div><a href="contacts.html"><h2 class="qw" style="margin-top: 20px;">Контакты</h2></a>
+            <div class="container_xi">
+                <div class="qrap">
+                    <div class="bbloki_qrap1">
+                        <div class="nap">
+                            <img src="assets/image/16.svg" alt="" class="left" />
+                            <h4 class="xc">Адрес</h4>
+                            <p class="xv">г. Ковров,<br>
+                                пр-т. Ленина, 49</p>
+                        </div>
+                        <div class="nap">
+                            <img src="assets/image/17.svg" alt="" class="left" />
+                            <h4 class="xc">Телефон</h4>
+                            <p class="xv">+7 905-144-30-26</p>
+                        </div>
+                        <div class="nap">
+                            <img src="assets/image/18.svg" alt="" class="left" />
+                            <h4 class="xc">Email</h4>
+                            <p class="xv">info@naruzka.ru</p>
+                        </div>
+                        <div class="nap">
+                            <img src="assets/image/19.svg" alt="" class="left" />
+                            <h4 class="xc">Время работы</h4>
+                            <p class="xv">пн-пт 09:00-18:00</p>
+                            <p class="xv">сб,вс-выходные</p>
+                        </div>   
+                    </div>
+                    <div class="bbloki_qrap2">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A98c556835ab227816ea0265185d3a89ee7311081c87c640cd479de7d6fda8192&amp;width=798&amp;height=318&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <section id="otzivi">
+            <div class="container_sai"> 
+                <h2 class="qw" style="margin-top: 20px;">Отзывы</h2>
+                <div class="review-slider">
+                    <div class="slider-element"><img src="./assets/review-slider/image2.png" alt=""></div>
+                    <div class="slider-element"><img src="./assets/review-slider/image3.png" alt=""></div>
+                    <div class="slider-element"><img src="./assets/review-slider/image1.png" alt=""></div>
+                    <div class="slider-element"><img src="./assets/review-slider/image2.png" alt=""></div>
+                    <div class="slider-element"><img src="./assets/review-slider/image3.png" alt=""></div>
+                    <div class="slider-element"><img src="./assets/review-slider/image1.png" alt=""></div>
+                </div>
+            </div>
+            <div class="container_yellow_buttom">
+                <button class="yellow_buttom1">
+                    <a href="contacts.html" style="padding: 16px 66px 16px 66px;">смотреть больше</a>
+                </button>
+            </div>
+        </section>
+        
+
+        <div class="container_wai">
+            <h2 class="qw" style="margin-top: 20px;">Вопросы и ответы</h2>
+            <details class="details">
+                <summary class="details__title">
+                    Как сделать так что бы, наружная реклама работала?
+                    <div class="accordeon-button"></div>
+                </summary>
+                <div class="details__content">
+                    <p>Аудиторией наружной рекламы являются все прохожие, водители и пассажиры автотранспорта.
+                        Наружная реклама привлекает самую разнообразную аудиторию, поэтому она должна быть
+                        ориентирована
+                        на соответственное ее восприятие. Не должно быть раздражающих моментов, которые вызывали бы
+                        отрицательную реакцию.
+                        Каждый объект такой рекламы должен нести какой-то определенный смысл. Мы рекомендуем
+                        размещать наружную рекламу не
+                        менее, чем на 2 месяца. При соблюдении всех эти правил — результат не заставит себя ждать!
+                </div>
+            </details>
+            </p>
+            <details class="details">
+                <summary class="details__title">
+                    Если у меня нет готового макета, как мне разместить рекламу?
+                    <div class="accordeon-button"></div>
+                </summary>
+                <div class="details__content">
+                    <p>Наше рекламное агентство поможет разработать макет для вашей компании.</p>
+                </div>
+                <div class="accordeon-button"></div>
+            </details>
+            <details class="details">
+                <summary class="details__title">
+                    Можно ли будет получить фотоотчет?
+                    <div class="accordeon-button"></div>
+                </summary>
+                <div class="details__content">
+                    <p>Фотоотчет о размещении рекламы в метро можно получить в течение 2-х недель после начала
+                        рекламной кампании.</p>
+                </div>
+                <div class="accordeon-button"></div>
+            </details>
+        </div>
+        
+        <section id=form-section>
+            <div class="container_row">
+                <div class="drap">
+                    <div class="bbloki_drap1">
+                        <div class="mav"><h3 class="zs">Нужна консультация или определились с выбором?</h3></div>
+                        <div class="taw"><p class="zx">Мы всегда вам поможем, только заполните анкету!</p>
+                            <p class="zx">Позвоним в течении 5 минут.</p></div>
+                        <div class="liu"><p class="zd">8 905-649-13-55 </p>
+                            <p class="zd">8 905-144-30-26</p></div>
+                    </div>
+                    <div class="bbloki_drap2">
+                        <form method="POST" action="">
+                            <div class="blok_iop">
+                                <div class="iop"><label><input type="text" name='имя' placeholder="Ваше имя"></input></label></div>
+                                <div class="iop"><label><input type="phone" name='телефон' placeholder="Телефон*"></input></label></div>
+                            </div>
+                            <div class="fprma">
+                                <p><textarea rows="7" cols="45" name="text" placeholder="Напишите ваш комментарий..." class="textarea_form"></textarea></p></div>
+                            <input type="checkbox" id="myCheckbox" class="demoCustomCheckbox" name="sogl">
+                                        <label for="myCheckbox" style="padding-top:5px">&nbsp Я согласен на обработку персональных данных</label>
+                                        <!-- <input type="checkbox" id="custom-checkbox" name="sogl"> Соглашаюсь на обработку персональных данных </label>
+                                    </p> -->
+                                <button class="orange">
+                                    ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК
+                                </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container_r">
+            <div class="crap">
+            <div class="bbloki_crap1">
+                <div class="wap">
+                    <a href="#" class="logo1"><img src="./assets/image/logo.svg" alt="Логотип" class="logo1"></a>
+                    <p style="margin-top: 29px">© 2024 Наружка</p>
+                </div>
+                <div class="wap">
+                    <p style="margin-top: 16px" class="mip">Наружка в соцсетях:</p>
+                    <div class="cpap">
+                        <a href="https://vk.com/club28889400"><img src="assets/image/21.svg" style="width: 38px; height: 38px;" class="filter-yellow"></a>
+                        <a href="http://odnoklassniki.ru/#/group/51011496902822"><img src="assets/image/22.svg" style="width: 38px; height: 38px;" class="filter-yellow"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="bbloki_crap2">
+                <p style="margin-bottom: 20px;"><a href="#uslugi" class="bolz" >Услуги</a></p>
+                <p style="margin-bottom: 15px;"><a href="naruz.html" class="menz" >Наружная реклама</a></p>
+                <p style="margin-bottom: 15px;"><a href="inter.html" class="menz" >Интерьерная реклама</a></p>
+                <p style="margin-bottom: 20px;"><a href="poligraph.html" class="menz" >Полиграфия</a></p>
+                <a href="contacts.html" class="bolz">Отзывы</a>
+            </div>
+            <div class="bbloki_crap3">
+                <p style="margin-bottom: 20px;"><a href="contacts.html" class="bolz">Контакты</a></p>
+                <p class="tuext">601901, Владимирская область, город Ковров, проспект Ленина, 49. <br>
+                    тел./факс: 8-905-649-13-55<br> эл. почта: info@naruzka.ru <br> Офис: пр-т Ленина 49 <br>
+                    Производство: ул. Муромская , 9А</p>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <div class="btn-up btn-up_hide"></div>
+    </div>
+
+    <script>
+        jQuery(document).ready(function ($) {
+            jQuery(".responsive").slick({
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: false,
+                dots: true,
+                appendDots: $('.custom-dots'),
+                customPaging: function (slider, i) {
+                    return '<button class="custom-dot"></button>';
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            $('.review-slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                centerMode: true,
+                variableWidth: true
+            });
+        });
+
+    </script>
+
+    <script>
+        (function ($) {
+
+            $.fn.makeRollingCaption = function (options) {
+
+                options = $.extend({
+                    speed: 20
+                }, options);
+
+                this.each(function (index, container) {
+
+                    var methods = {
+
+                        initialize: function () {
+
+                            this.container = $(container).first();
+                            this.content = this.container.find('.b-rolling-caption__content');
+                            this.wrap = this.container.find('.b-rolling-caption__wrap');
+
+                            this.setWidth();
+                            this.wrap.show();
+
+                            var item = this.content.find('div').first();
+
+                            this.start(item);
+
+                            $(window).on('resize', $.proxy(function () {
+                                this.content.stop(true, true).css('left', 0);
+                                if (this.timer) clearTimeout(this.timer); else this.wrap.hide();
+                                this.timer = setTimeout($.proxy(this.onStopResize, this), 300);
+
+                            }, this));
+
+                        },
+
+                        setWidth: function () {
+                            this.wrap.width(this.container.parent().width());
+                        },
+
+                        onStopResize: function () {
+
+                            this.setWidth();
+
+                            this.timer = null;
+                            this.wrap.show();
+                            this.start(this.content.find('div').first());
+                        },
+
+                        start: function (item) {
+                            if (item.length) {
+
+                                this.content.animate({
+                                    left: '-=' + item.width() + 'px'
+                                }, item.width() * options.speed, 'linear', $.proxy(function () {
+                                    var next = item.next();
+                                    if (!next) next = this.content.find('div').first();
+                                    this.content.append(item);
+                                    if (!this.timer) {
+                                        this.content.css('left', 0);
+                                        this.start(next);
+                                    }
+
+                                }, this));
+
+                            }
+                        }
+
+                    };
+
+                    methods.initialize();
+
+                });
+
+            };
+
+        })(jQuery);
+
+
+        $(function () {
+            $('.b-rolling-caption').makeRollingCaption({ speed: 20 });
+        });
+
+    </script>
+        <script>
+            const btnUp = {
+              el: document.querySelector('.btn-up'),
+              scrolling: false,
+              show() {
+                if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                  this.el.classList.remove('btn-up_hide');
+                  this.el.classList.add('btn-up_hiding');
+                  window.setTimeout(() => {
+                    this.el.classList.remove('btn-up_hiding');
+                  }, 300);
+                }
+              },
+              hide() {
+                if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+                  this.el.classList.add('btn-up_hiding');
+                  window.setTimeout(() => {
+                    this.el.classList.add('btn-up_hide');
+                    this.el.classList.remove('btn-up_hiding');
+                  }, 300);
+                }
+              },
+              addEventListener() {
+                // при прокрутке окна (window)
+                window.addEventListener('scroll', () => {
+                  const scrollY = window.scrollY || document.documentElement.scrollTop;
+                  if (this.scrolling && scrollY > 0) {
+                    return;
+                  }
+                  this.scrolling = false;
+                  // если пользователь прокрутил страницу более чем на 200px
+                  if (scrollY > 400) {
+                    // сделаем кнопку .btn-up видимой
+                    this.show();
+                  } else {
+                    // иначе скроем кнопку .btn-up
+                    this.hide();
+                  }
+                });
+                // при нажатии на кнопку .btn-up
+                document.querySelector('.btn-up').onclick = () => {
+                  this.scrolling = true;
+                  this.hide();
+                  // переместиться в верхнюю часть страницы
+                  window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            }
+        
+            btnUp.addEventListener();
+          </script>
+</body>
+</html>

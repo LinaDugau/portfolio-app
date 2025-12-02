@@ -1,0 +1,21 @@
+{
+  "name": "Резюме — Ангелина Дмитриева",
+  "short_name": "Резюме",
+  "start_url": "index.html",
+  "display": "standalone",
+  "scope": "./",
+  "background_color": "#fff6fa",
+  "theme_color": "#f3cade",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

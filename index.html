@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме — Ангелина Дмитриева, Web-разработчик</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f3cade">
+</head>
+
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="profile">
+            <h1>Ангелина Дмитриева</h1>
+            <p>Web-разработчик</p>
+        </div>
+
+        <!-- Навигация -->
+        <nav>
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#education">Образование</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+
+        <!-- Обо мне -->
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p>Я начинающая Web-разработчица, увлечённая созданием современных, удобных и визуально привлекательных интерфейсов. Люблю аккуратную HTML5-семантику, адаптивную верстку и работу с современными фреймворками. Постоянно развиваюсь и расширяю стек технологий.</p>
+        </section>
+
+        <!-- Навыки -->
+        <section id="skills">
+            <h2>Навыки</h2>
+            <ul>
+                <li>HTML5, CSS3</li>
+                <li>Flexbox, Grid</li>
+                <li>JavaScript</li>
+                <li>Git, GitHub</li>
+                <li>Figma, Pixso</li>
+                <li>React, React Native, TypeScript</li>
+                <li>Vue</li>
+                <li>Expo</li>
+            </ul>
+        </section>
+
+        <!-- Образование -->
+        <section id="education" >
+            <h2>Образование</h2>
+
+            <article class="glass-card">
+                <h3>Нижневаровский социально-гуманитарный колледж (НСГК)</h3>
+                <p><strong>Годы обучения:</strong> 2022–2026</p>
+                <p><strong>Специальность:</strong> Информационные системы и программирование</p>
+            </article>
+        </section>
+
+        <!-- Портфолио -->
+        <section id="portfolio" >
+            <h2>Портфолио</h2>
+
+            <a href="photostudio/index.html" class="glass-card-link">
+                <article class="glass-card">
+                    <h3>Макет сайта «Сам себе фотограф»</h3>
+                    <p>Дизайн-макет сайта для фотостудии.</p>
+                </article>
+            </a>
+
+            <a href="flower/page2.html" class="glass-card-link">
+                <article class="glass-card">
+                    <h3>Сайт для цветочного магазина</h3>
+                    <p>Макет онлайн-витрины и каталога товаров.</p>
+                </article>
+            </a>
+
+            <a href="naruzhka/index2.html" class="glass-card-link">
+                <article class="glass-card">
+                    <h3>Сайт рекламного агентства «Наружка»</h3>
+                    <p>Современный дизайн корпоративного сайта.</p>
+                </article>
+            </a>
+
+            <a href="coffee/index.html" class="glass-card-link">
+                <article class="glass-card">
+                    <h3>Лендинг кофейни-десертной «Maison Vert Café»</h3>
+                    <p>Продающий лендинг с акцентом на визуальную атмосферу.</p>
+                </article>
+            </a>
+
+            <article class="glass-card">
+                <h3>Личный сайт-визитка</h3>
+                <p>Минималистичный сайт о себе и своих проектах.</p>
+            </article>
+        </section>
+
+        <!-- Доп. информация -->
+        <aside class="glass-card">
+            <h2>Интересы</h2>
+            <p>Изучаю современную frontend-разработку, взаимодействие дизайна и программирования, а также мобильную разработку.</p>
+        </aside>
+
+    </main>
+
+    <!-- Подвал -->
+    
+<footer id="contacts">
+    <button id="btn-install" class="install-glass">Установить приложение</button>
+
+        <h2>Контакты</h2>
+        <p><strong>Email:</strong> AngelDmi2006@outlook.com</p>
+        <p><strong>GitHub:</strong> https://github.com/LinaDugau</p>
+        <p>&copy; 2025 Ангелина Дмитриева</p>
+    </footer>
+
+
+<script>
+if("serviceWorker" in navigator){
+    navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+<script src="install.js"></script>
+</body>
+</html>

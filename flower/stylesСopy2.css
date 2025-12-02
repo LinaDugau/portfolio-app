@@ -1,0 +1,299 @@
+@import url('fonts.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+html,
+body {
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+}
+
+.container {
+    max-width: 1076px;
+    margin: 0px auto;
+}
+
+/*Шапка*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0 20%; */
+    height: 112px;
+    border-bottom: 3px solid rgba(91, 1, 113, 0.7);
+    z-index: 4;
+
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+header .logo img {
+    width: 100%;
+    height: auto;
+    max-width: 365px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: 4px;
+}
+
+
+nav ul li ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(223, 122, 157);
+    color: white;
+    display: none;
+    margin-left:0px;
+}
+
+nav ul li ul a {
+    color: white;
+    padding: 10px;
+    width: 125px;
+}
+
+
+nav ul li:hover ul {
+    display: block;
+    margin-left:0px;
+}
+
+.svaz {
+    color: white;
+    background: rgb(91, 1, 113);
+    /* Цвет фона */
+    border: 0px solid;
+    /* Параметры рамки */
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+}
+
+header nav li img {
+    margin: 0 0 0 3px;
+}
+
+.header-container {
+    max-width: 1147.06px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Контакты */
+
+.breadcrumb {
+    font-size: 13px;
+    background-color: #fff;
+    padding: 0.75rem 0 0;
+    margin-bottom: 0;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    border-radius: 0.25rem;
+
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+dl, ol, ul {
+    margin-top: 0;
+}
+
+.container {
+    max-width: 1230px;
+    background-color: transparent;
+}
+
+div ol li a {
+    text-decoration: none;
+    color: black;
+}
+
+.container_m {
+    max-width: 1075px;
+    margin: 0px auto;  
+}
+
+h1 {
+    text-align: center;
+
+    color: rgb(0, 0, 0);
+font-family: Inter;
+font-size: 32px;
+font-weight: 300;
+line-height: 39px;
+letter-spacing: 0px;
+padding-bottom: 30px;
+}
+
+.mimi {
+    float: right; /* Выравнивание по правому краю */
+    margin: 0 0 10px 30px; /* Отступы вокруг фотографии */
+    height: auto;
+    box-align: top;
+}
+
+.tu {
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 0px;
+    text-align: left;
+    border-bottom: 2px solid rgb(254, 113, 155);
+    padding: 20px 0;
+}
+
+.uu {
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 0px;
+    text-align: left;
+    border-bottom: 2px solid rgb(254, 113, 155);
+    border-width: px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.lu {
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 450;
+    line-height: 25px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+bold {
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.container_w {
+    max-width: 520px;
+}
+
+/* Футер */
+footer {
+    background: rgba(196, 196, 196, 0.6);
+    color: #fff;
+    text-align: left;
+    margin-top: 120px; 
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 20px;
+}    
+
+#container_r {
+    max-width: 1194px;
+    margin: 0px auto;
+    margin-top: 20px;
+
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 36px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+#container_p {
+    max-width: 1194px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    
+
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 36px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+div ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+div ul a {
+    text-decoration: none;
+    color: black;
+}

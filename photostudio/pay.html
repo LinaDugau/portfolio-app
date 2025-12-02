@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S(HE) фотостудия</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container-pay container">
+      <h1 class="h1_rules">ОПЛАТА КАРТОЙ</h1>
+      <div id="booking-details"></div>
+      <form id="payment-form" action="process_payment.php" method="POST">
+        <input type="hidden" id="booking_id" name="booking_id" value="" />
+        <input
+          type="text"
+          id="card-number"
+          name="card_number"
+          placeholder="НОМЕР КАРТЫ (16 ЦИФР)"
+          required
+        />
+        <div id="card-number-error" class="error-message" style="display: none">
+          Номер карты должен быть 16 цифр.
+        </div>
+
+        <input
+          type="text"
+          id="expiry"
+          name="expiry"
+          placeholder="СРОК ДЕЙСТВИЯ MMYY"
+          required
+        />
+        <div id="expiry-error" class="error-message" style="display: none">
+          Введите корректный срок действия карты.
+        </div>
+
+        <input
+          type="password"
+          id="cvv"
+          name="cvv"
+          placeholder="CVV-КОД"
+          required
+        />
+        <div id="cvv-error" class="error-message" style="display: none">
+          CVV должен быть 3 цифры.
+        </div>
+
+        <div class="container-button-form-payment">
+          <button type="submit" class="black_white_button-payment">
+            ОПЛАТИТЬ
+          </button>
+        </div>
+      </form>
+
+      <div id="overlay" class="overlay" style="display: none"></div>
+
+      <div id="error-window" class="error-window" style="display: none">
+        <p id="error-message"></p>
+        <button id="close-error-window">Закрыть</button>
+      </div>
+    </div>
+  </body>
+  <script src="./pay.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookingId = urlParams.get("booking_id"); // Получаем booking_id из URL
+
+      if (bookingId) {
+        // Устанавливаем его в скрытое поле формы
+        document.getElementById("booking_id").value = bookingId;
+      } else {
+        // Если booking_id не найден, показываем ошибку
+        alert("Ошибка: не указан booking_id в URL!");
+      }
+    });
+  </script>
+</html>

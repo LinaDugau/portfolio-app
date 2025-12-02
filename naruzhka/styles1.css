@@ -1,0 +1,100 @@
+/* Стили для формы и страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container_reviews {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.white {
+    border: none; /* Убираем границу для браузера Firefox */
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.review-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.input-group textarea {
+    height: 100px;
+}
+
+.submit-button {
+    background-color: #FFB800;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #FFA200;
+}
+
+.review {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.review p {
+    margin: 10px 0;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #FFB800;
+    margin: 0 5px;
+    font-size: 1.2rem;
+}
+
+.pagination strong {
+    font-size: 1.2rem;
+}
+
+.pagination a:hover {
+    color: #FFA200;
+}

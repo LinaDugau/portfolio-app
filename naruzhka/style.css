@@ -1,0 +1,1919 @@
+@import url('fonts.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+html,
+body {
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    scroll-behavior: smooth;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Шапка */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(251, 250, 245);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 122px;
+    border-bottom: 3px solid rgb(251, 187, 19);
+    z-index: 4;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+header .logot img {
+    height: auto;
+    max-width: 190px;
+    min-height: 110px;
+    margin-bottom: -8px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+dl, 
+ol, 
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: 4px;
+}
+
+
+nav ul li ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(251, 187, 19);
+    color: white;
+    display: none;
+    margin-left:0px;
+}
+
+nav ul li ul a {
+    color: white;
+    padding: 10px;
+    width: 135px;
+}
+
+
+nav ul li:hover ul {
+    display: block;
+    margin-left:0px;
+}
+
+.svaz {
+    color: white;
+    background: rgb(238, 114, 27);
+    /* Цвет фона */
+    border-radius: 18px;
+    border: 0px solid;
+    /* Параметры рамки */
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    padding: 10px 15px 10px 15px;
+}
+
+header nav li img {
+    margin: 0 0 0 3px;
+}
+
+.header-container {
+    max-width: 1249px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    background-color: #fff;
+    flex-grow: 1;
+    margin-top: 123px;
+}
+
+footer {
+    background-color: rgb(251, 250, 245);;
+}
+
+/* Слайдер */
+
+.content {
+    margin: auto;
+    padding: 20px 0px 20px 0px;
+    width: 100%;
+    max-width: 1383px;
+    box-sizing: border-box;
+}
+
+.bord {
+    border-radius: 20px;
+    filter: blur(0.5px);
+}
+
+.nabor {
+    padding: 91px 0 115px 116px;
+}
+
+.slide_h1 {
+    margin-bottom: 125px;
+
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 49px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.slide_h2 {
+    margin-bottom: 125px;
+
+
+    color: rgb(6, 6, 6);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.slide_h3 {
+    margin-bottom: 125px;
+    text-shadow:
+        -2px -2px 0 #000,
+        0   -2px 0 #000,
+        2px -2px 0 #000,
+        2px  0   0 #000,
+        2px  2px 0 #000,
+        0    1px 0 #000,
+        -2px  2px 0 #000,
+        -2px  0   0 #000;
+
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.slide_p1 {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 2px;
+    text-align: left;
+    margin-bottom: 123px;
+}
+
+.slide_p2 {
+    color: rgb(251, 187, 19);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 2px;
+    text-align: left;
+    margin-bottom: 123px;
+}
+
+.slide_p3 {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 2px;
+    text-align: left;
+    margin-bottom: 123px;
+}
+
+.white_buttom {
+    color: rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+    /* Цвет фона */
+    border-radius: 35px;
+    border: 0px solid;
+    /* Параметры рамки */
+    margin-right: 30px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 20px 25px 20px 25px;
+}
+
+.yellow_buttom {
+    color: rgb(255, 255, 255);
+    background: rgb(251, 187, 19);
+    /* Цвет фона */
+    border-radius: 35px;
+    border: 0px solid;
+    /* Параметры рамки */
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 20px 25px 20px 25px;
+}
+
+.myamya {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.tyamya {
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Стили для кастомных точек */
+.slick-dotted.slick-slider {
+    margin-bottom: 11px;
+}
+
+.custom-dots {
+    margin: 0 auto;
+    width: max-content;
+    position: relative;
+}
+
+.custom-dots .slick-dots {
+    width: auto;
+    position: initial;
+
+}
+
+.slick-dots li {
+    width: max-content;
+    height: max-content;
+    margin: 0 13px;
+}
+
+.slick-dots li.slick-active button.custom-dot {
+    background: rgb(251, 187, 19);
+}
+
+.slick-dots li button:before {
+    content: "";
+}
+
+.slick-dots li button.custom-dot {
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 3px solid rgb(251, 187, 19);
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Колонки */
+
+.container_vu {  
+    display: grid;
+    max-width: 1383px;
+    margin: 0 auto;
+    border: 3px solid rgb(251, 187, 19);
+    border-radius: 15px;
+    padding: 28px 94px 15px 97px;
+    grid-template-columns: 358px 192px 333px;
+    grid-template-rows: 136px;
+    grid-auto-rows: 1fr;
+    gap: 135px 144px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "a b c";
+}
+  
+.a { 
+    grid-area: a; 
+}
+  
+.b { 
+    grid-area: b; 
+}
+  
+.c { 
+    grid-area: c; 
+    margin-top: -10px;
+}
+
+.ru {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-bottom: 22px;
+    
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.tu {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-bottom: 2px;
+    
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+/* Бегущая строка компаний */
+
+.b-rolling-caption {
+    margin-bottom: 4px;
+}
+
+.b-rolling-caption .b-rolling-caption__content {
+    position: relative;
+    left: 0;
+    width: 5000px;
+    display: flex;
+}
+
+.b-rolling-caption .b-rolling-caption__content div {
+    width: min-content;
+    text-align: center;
+}
+
+.b-rolling-caption .b-rolling-caption__wrap {
+    display: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.b-rolling-caption__content img {
+    margin: 0 25px;
+}
+
+/* Две штуки */
+
+.qu {
+    margin-bottom: 12px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.ri {
+    margin-bottom: 20px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+
+.wrap {
+    max-width: 1383px;
+    margin: 0 auto; 
+    /* ценmрuруем ее*/
+    margin-top: 20px;
+    background: rgb(255, 255, 255);
+    height: 324px; 
+    /* Задаем выcomу обертки*/
+}
+
+.bblock {
+    float: left; 
+    /*Задаем обтекание*/
+    background: rgb(251, 250, 245);
+    color: white;
+    width: 751px; 
+    /*Фиксируем ширинублока*/
+    margin-right: 45px;
+    text-align: left; 
+    padding: 23px 48px 13px 48px;
+    border-radius: 15px;
+}
+
+.bblock_2 {
+    float: left; 
+    /*Задаем обтекание*/
+    background: rgb(251, 250, 245);
+    color: rgb(0, 0, 0);
+    width: 587px; 
+    /*Фиксируем ширинублока*/
+    padding: 26px 46px 40px 25px;
+    border-radius: 15px;
+}
+
+wrap last-child {
+    margin-right: 0px; 
+    /*Убираем поле последнего div-a*/
+}
+
+.prap {
+    max-width: 536px;
+    margin: 0 auto; 
+    /* ценmрuруем ее*/
+    margin-top: 15px;
+    background: rgb(251, 250, 245);
+    height: 91px; 
+    /*/"Задаем выcomу обертки*/
+    padding: 0px 0px 0px 0px;    
+}
+
+prap last-child {
+    margin-right: 0px; 
+    /*Убираем поле последнего div-a*/
+}
+
+.bblock_3 {
+    float: left; 
+    /*Задаем обтекание*/
+    color: rgb(0, 0, 0);
+    width: 206px; 
+    /*Фиксируем ширинублока*/
+    margin-right: 68px;
+    text-align: left;
+}
+
+.bblock_4 {
+    float: left; 
+    /*Задаем обтекание*/
+    color: rgb(0, 0, 0);
+    width: 216px; 
+    /*Фиксируем ширинублока*/
+    text-align: left; 
+}
+
+.mi {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: left;
+}
+
+.ti {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+}
+
+.yu {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.qt {
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 59px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+/* услуги */
+
+.qw {
+    margin-bottom: 12px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.container_mi {
+    max-width: 1343px;
+    margin: 0 auto; 
+    /* ценmрuруем ее*/
+    margin-top: 20px;
+}
+
+.container_re {  
+    display: grid;
+    margin: 0 auto; 
+    /* ценmрuруем ее*/
+    grid-template-columns: 419px 419px 419px;
+    grid-template-rows: 253px;
+    grid-auto-rows: 1fr;
+    gap: 0px 44px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "g h e";
+  }
+  
+.g { 
+    grid-area: g; 
+    background-image: url(./assets/image/11.png);
+    padding: 22px 180px 149px 25px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41px;
+    text-align: left;
+    color: #000000;
+	text-shadow: 
+		-0   -6px 5px #FFFFFF,
+		 0   -6px 5px #FFFFFF,
+		-0    6px 5px #FFFFFF,
+		 0    6px 5px #FFFFFF,
+		-6px -0   5px #FFFFFF,
+		 6px -0   5px #FFFFFF,
+		-6px  0   5px #FFFFFF,
+		 6px  0   5px #FFFFFF,
+		-1px -6px 5px #FFFFFF,
+		 1px -6px 5px #FFFFFF,
+		-1px  6px 5px #FFFFFF,
+		 1px  6px 5px #FFFFFF,
+		-6px -1px 5px #FFFFFF,
+		 6px -1px 5px #FFFFFF,
+		-6px  1px 5px #FFFFFF,
+		 6px  1px 5px #FFFFFF,
+		-2px -6px 5px #FFFFFF,
+		 2px -6px 5px #FFFFFF,
+		-2px  6px 5px #FFFFFF,
+		 2px  6px 5px #FFFFFF,
+		-6px -2px 5px #FFFFFF,
+		 6px -2px 5px #FFFFFF,
+		-6px  2px 5px #FFFFFF,
+		 6px  2px 5px #FFFFFF,
+		-3px -6px 5px #FFFFFF,
+		 3px -6px 5px #FFFFFF,
+		-3px  6px 5px #FFFFFF,
+		 3px  6px 5px #FFFFFF,
+		-6px -3px 5px #FFFFFF,
+		 6px -3px 5px #FFFFFF,
+		-6px  3px 5px #FFFFFF,
+		 6px  3px 5px #FFFFFF,
+		-4px -6px 5px #FFFFFF,
+		 4px -6px 5px #FFFFFF,
+		-4px  6px 5px #FFFFFF,
+		 4px  6px 5px #FFFFFF,
+		-6px -4px 5px #FFFFFF,
+		 6px -4px 5px #FFFFFF,
+		-6px  4px 5px #FFFFFF,
+		 6px  4px 5px #FFFFFF,
+		-5px -6px 5px #FFFFFF,
+		 5px -6px 5px #FFFFFF,
+		-5px  6px 5px #FFFFFF,
+		 5px  6px 5px #FFFFFF,
+		-6px -5px 5px #FFFFFF,
+		 6px -5px 5px #FFFFFF,
+		-6px  5px 5px #FFFFFF,
+		 6px  5px 5px #FFFFFF,
+		-6px -6px 5px #FFFFFF,
+		 6px -6px 5px #FFFFFF,
+		-6px  6px 5px #FFFFFF,
+		 6px  6px 5px #FFFFFF,
+		-6px -6px 5px #FFFFFF,
+		 6px -6px 5px #FFFFFF,
+		-6px  6px 5px #FFFFFF,
+		 6px  6px 5px #FFFFFF;
+}
+  
+.h { 
+    grid-area: h; 
+    background-image: url(./assets/image/12.jpeg);
+    background-position: center;
+    max-width: 419;
+    background-size: 419px auto;
+    border-radius: 15px;
+    padding: 22px 110px 150px 25px;
+
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41px;
+    text-align: left;
+    text-shadow: 
+		-0   -6px 5px #000000,
+		 0   -6px 5px #000000,
+		-0    6px 5px #000000,
+		 0    6px 5px #000000,
+		-6px -0   5px #000000,
+		 6px -0   5px #000000,
+		-6px  0   5px #000000,
+		 6px  0   5px #000000,
+		-1px -6px 5px #000000,
+		 1px -6px 5px #000000,
+		-1px  6px 5px #000000,
+		 1px  6px 5px #000000,
+		-6px -1px 5px #000000,
+		 6px -1px 5px #000000,
+		-6px  1px 5px #000000,
+		 6px  1px 5px #000000,
+		-2px -6px 5px #000000,
+		 2px -6px 5px #000000,
+		-2px  6px 5px #000000,
+		 2px  6px 5px #000000,
+		-6px -2px 5px #000000,
+		 6px -2px 5px #000000,
+		-6px  2px 5px #000000,
+		 6px  2px 5px #000000,
+		-3px -6px 5px #000000,
+		 3px -6px 5px #000000,
+		-3px  6px 5px #000000,
+		 3px  6px 5px #000000,
+		-6px -3px 5px #000000,
+		 6px -3px 5px #000000,
+		-6px  3px 5px #000000,
+		 6px  3px 5px #000000,
+		-4px -6px 5px #000000,
+		 4px -6px 5px #000000,
+		-4px  6px 5px #000000,
+		 4px  6px 5px #000000,
+		-6px -4px 5px #000000,
+		 6px -4px 5px #000000,
+		-6px  4px 5px #000000,
+		 6px  4px 5px #000000,
+		-5px -6px 5px #000000,
+		 5px -6px 5px #000000,
+		-5px  6px 5px #000000,
+		 5px  6px 5px #000000,
+		-6px -5px 5px #000000,
+		 6px -5px 5px #000000,
+		-6px  5px 5px #000000,
+		 6px  5px 5px #000000,
+		-6px -6px 5px #000000,
+		 6px -6px 5px #000000,
+		-6px  6px 5px #000000,
+		 6px  6px 5px #000000,
+		-6px -6px 5px #000000,
+		 6px -6px 5px #000000,
+		-6px  6px 5px #000000,
+		 6px  6px 5px #000000;
+}
+  
+.e { 
+    grid-area: e; 
+    background-image: url(./assets/image/9.png);
+    padding: 22px 115px 190px 25px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 41px;
+    text-align: left;
+    color: #000000;
+	text-shadow: 
+		-0   -6px 5px #FFFFFF,
+		 0   -6px 5px #FFFFFF,
+		-0    6px 5px #FFFFFF,
+		 0    6px 5px #FFFFFF,
+		-6px -0   5px #FFFFFF,
+		 6px -0   5px #FFFFFF,
+		-6px  0   5px #FFFFFF,
+		 6px  0   5px #FFFFFF,
+		-1px -6px 5px #FFFFFF,
+		 1px -6px 5px #FFFFFF,
+		-1px  6px 5px #FFFFFF,
+		 1px  6px 5px #FFFFFF,
+		-6px -1px 5px #FFFFFF,
+		 6px -1px 5px #FFFFFF,
+		-6px  1px 5px #FFFFFF,
+		 6px  1px 5px #FFFFFF,
+		-2px -6px 5px #FFFFFF,
+		 2px -6px 5px #FFFFFF,
+		-2px  6px 5px #FFFFFF,
+		 2px  6px 5px #FFFFFF,
+		-6px -2px 5px #FFFFFF,
+		 6px -2px 5px #FFFFFF,
+		-6px  2px 5px #FFFFFF,
+		 6px  2px 5px #FFFFFF,
+		-3px -6px 5px #FFFFFF,
+		 3px -6px 5px #FFFFFF,
+		-3px  6px 5px #FFFFFF,
+		 3px  6px 5px #FFFFFF,
+		-6px -3px 5px #FFFFFF,
+		 6px -3px 5px #FFFFFF,
+		-6px  3px 5px #FFFFFF,
+		 6px  3px 5px #FFFFFF,
+		-4px -6px 5px #FFFFFF,
+		 4px -6px 5px #FFFFFF,
+		-4px  6px 5px #FFFFFF,
+		 4px  6px 5px #FFFFFF,
+		-6px -4px 5px #FFFFFF,
+		 6px -4px 5px #FFFFFF,
+		-6px  4px 5px #FFFFFF,
+		 6px  4px 5px #FFFFFF,
+		-5px -6px 5px #FFFFFF,
+		 5px -6px 5px #FFFFFF,
+		-5px  6px 5px #FFFFFF,
+		 5px  6px 5px #FFFFFF,
+		-6px -5px 5px #FFFFFF,
+		 6px -5px 5px #FFFFFF,
+		-6px  5px 5px #FFFFFF,
+		 6px  5px 5px #FFFFFF,
+		-6px -6px 5px #FFFFFF,
+		 6px -6px 5px #FFFFFF,
+		-6px  6px 5px #FFFFFF,
+		 6px  6px 5px #FFFFFF,
+		-6px -6px 5px #FFFFFF,
+		 6px -6px 5px #FFFFFF,
+		-6px  6px 5px #FFFFFF,
+		 6px  6px 5px #FFFFFF;
+}
+  
+/* Наши клиенты */
+
+.container_li {
+    /* max-width: 1343px; */
+    /* margin: 0 auto; */
+    width: 100%;
+    /* ценmрuруем ее*/
+    margin-top: 20px;
+}
+
+/* Как мы работаем */
+
+.container_ki {
+    max-width: 1242px;
+    margin: 0 auto; 
+    /* ценmрuруем ее*/
+    margin-top: 20px;
+}
+
+.container_po {  
+    display: grid;
+    max-width: 1242px;
+    margin: 0 auto; 
+    /* ценmрuруем ее*/
+    grid-template-columns: 388px 388px 388px;
+    grid-template-rows: 345px;
+    grid-auto-rows: 1fr;
+    gap: 0px 39px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "x z y";
+}
+
+.container_po div {
+    text-align: center;
+}
+  
+.x { 
+    grid-area: x; 
+    border: 3px solid rgb(251, 187, 19);
+    border-radius: 25px;
+    padding: 18px 22px 42px 22px;
+}
+  
+.z { 
+    grid-area: z; 
+    border: 3px solid rgb(251, 187, 19);
+    border-radius: 25px;
+    padding: 18px 22px 14px 22px;
+}
+  
+.y { 
+    grid-area: y; 
+    border: 3px solid rgb(251, 187, 19);
+    border-radius: 25px;
+    padding: 18px 22px 34px 22px;
+}
+
+.fg {
+    margin-bottom: 12px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.io {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+/* Контакты */
+
+.container_xi {
+    max-width: 1242px;
+    margin: 0 auto; 
+    /* ценmрuруем ее*/
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 3px solid rgb(251, 187, 19);
+}
+
+.left {
+    float: left;
+    padding: 0 26px 0px 0;
+}
+
+.qrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1274px;
+    height: 373px; 
+    /*/"Задаем выcomу обертки*/
+    padding: 29px 31px 34px 58px;    
+}
+
+qrap last-child {
+    margin-right: 0px; 
+    /*Убираем поле последнего div-a*/
+}
+
+.bbloki_qrap1 {
+    color: rgb(0, 0, 0);
+    width: 279px; 
+    /*Фиксируем ширинублока*/
+    text-align: left;
+}
+
+.nap {
+    margin-bottom: 20px;
+}
+
+.xc {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.xv {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.bbloki_qrap2 {
+    color: rgb(0, 0, 0);
+    width: 800px; 
+    /*Фиксируем ширинублока*/
+    text-align: left;
+}
+
+.bbloki_qrap2 iframe{
+    border-radius: 20px;
+}
+
+/* Отзывы  */
+
+.container_sai {
+    max-width: 1384px;
+    margin: 0 auto; 
+    /* ценmрuруем ее*/
+    margin-top: 20px;
+}
+
+.container_yellow_buttom {
+    max-width: 320px;
+    margin: 0 auto; 
+    /* ценmрuруем ее*/
+    margin-top: 20px;
+}
+
+.yellow_buttom1 {
+    color: rgb(255, 255, 255);
+    background: rgb(251, 187, 19);
+    /* Цвет фона */
+    border-radius: 15px;
+    border: 0px solid;
+    /* Параметры рамки */
+    
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 14px 0px 14px 0px;
+    border: 3px solid rgb(251, 187, 19);
+}
+
+.yellow_buttom1:hover {
+	border: 3px solid rgb(251, 187, 19);
+	background: rgba(0,0,0,0);
+}
+
+/* Вопросы и ответы */
+
+.container_wai {
+    max-width: 1288px;
+    margin: 0 auto;
+    /* ценmрuруем ее*/
+    margin-top: 20px;
+}
+
+.details {
+    position: relative;
+    display: block;
+    max-width: 1288px;
+    margin: 0 auto 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    transition: 0.3s;
+    overflow: hidden;
+    border: 3px solid rgb(251, 187, 19);
+}
+
+.details .accordeon-button {
+    position: absolute;
+    z-index: 2;
+    right: 28px;
+    top: 0;
+    background: url("./assets/image/accordeon-arrow.png") no-repeat center;
+    width: 46px;
+    height: 54px;
+    transition: background 0.5s ease;
+}
+
+.details[open] .accordeon-button {
+    transform: rotate(180deg);
+    background: url("./assets/image/accordeon-arrow-active.png") no-repeat center;
+}
+
+/* .details::after {
+    position: absolute;
+    right: 24px;
+    top: 15px;
+    content: "";
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-right: 3px solid rgb(255, 255, 255);
+    border-bottom: 3px solid rgb(255, 255, 255);
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: .3s;
+} */
+
+.details[open]::after {
+    transform: rotate(-135deg);
+}
+
+.details[open] {
+    padding-bottom: 20px;
+}
+
+.details[open] .details__title {
+    margin-bottom: 20px;
+}
+
+.details__title {
+    background: rgb(251, 187, 19);
+    border-radius: 5px;
+    padding: 15px 24px;
+    font-size: 20px;
+    cursor: pointer;
+    list-style: none;
+    font-weight: 700;
+    transition: .3s;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.details__title::-webkit-details-marker {
+    display: none;
+}
+
+.details__content {
+    padding: 0 32px;
+    font-size: 18px;
+    margin-bottom: 0px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.details__content p:last-child {
+    margin-bottom: 0;
+}
+
+.details__content p:first-child {
+    margin-top: 0;
+}
+
+/* Форма */
+
+.container_row {
+    max-width: 1384px;
+    margin: 0 auto; 
+    /* ценmрuруем ее*/
+    margin-top: 20px;
+    border: 3px solid rgb(238, 114, 27);
+    border-radius: 20px;
+}
+
+.drap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1579px;
+    height: 415px; 
+    /*/"Задаем выcomу обертки*/
+    padding: 30px 35px 20px 69px;    
+}
+
+drap last-child {
+    margin-right: 0px; 
+    /*Убираем поле последнего div-a*/
+}
+
+.bbloki_drap1 {
+    color: rgb(0, 0, 0);
+    width: 786px; 
+    /*Фиксируем ширинублока*/
+    text-align: left;
+    padding-right: 69px;
+}
+
+.mav {
+    margin-bottom: 52px;
+}
+
+.taw {
+    margin-bottom: 65px;
+}
+
+.zs {
+    margin-top: -10px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    text-align: left;
+}
+
+.zx {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    text-align: left;
+}
+
+.zd {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    text-align: left;
+}
+
+.bbloki_drap2 {
+    color: rgb(0, 0, 0);
+    width: 800px; 
+    /*Фиксируем ширинублока*/
+    text-align: left;
+}
+
+.demoCustomCheckbox {
+    display: none;
+}
+
+.demoCustomCheckbox + label {
+    position: relative;
+    padding-left: 30px;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.demoCustomCheckbox + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5em;
+    height: 1.5em;
+    border: 3px solid rgb(251, 187, 19);
+    border-radius: 5px;
+}
+
+.demoCustomCheckbox:checked + label::before {
+    border-color: rgb(251, 187, 19);
+    background-image: url("./assets/image/20.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 5px;
+}
+
+#custom-checkbox {
+    border: 3px solid rgb(251, 187, 19);
+}
+
+.orange {
+    color: white;
+    background:  rgb(238, 114, 27);
+    border: 0px solid;
+    padding: 18px 135px 18px 135px;
+    margin-top: 25px;
+    border-radius: 20px;
+
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.blok_iop {
+    display: flex;
+    justify-content: space-between;
+    max-width: 647px;
+    height: 64px; 
+    /*/"Задаем выcomу обертки*/
+    margin-bottom: 30px;
+}
+
+.iop {
+    max-width: 313px;
+    padding: 21px 105px 21px 30px;
+    border-radius: 20px;
+    border: 3px solid rgb(251, 187, 19);
+}
+
+input {
+    border: 0px;
+    outline: none;
+    text-align: top;
+    width: 250px;
+}
+
+.fprma {
+    border-radius: 20px;
+    border: 3px solid rgb(251, 187, 19);
+    padding: 15px 0 10px 30px;
+    margin-bottom: 20px;
+    text-align: top;
+    outline: none;
+}
+
+.textarea_form {
+    box-sizing: border-box;
+    width: 590px;
+    max-width: 590px;
+    min-width: 590px;
+    min-height: 99px;
+    max-height: 99px;
+    border: 0px;
+    outline: none;
+}
+
+/* Слайдер */
+
+.review-slider {
+    display: grid;
+    align-items: center;
+}
+
+.review-slider .slider-element {
+    box-sizing: border-box;
+    /* border: 3px solid rgb(251, 187, 19); */
+    width: 364px;
+    height: 507px;
+    margin: 0 34px;
+    /* border-radius: 12px; */
+
+}
+
+.review-slider .slider-element img {
+    object-fit: cover;
+    /* width: 100%;
+    height: 100%; */
+}
+
+.slick-next:focus,
+.slick-next:hover,
+.slick-prev:focus,
+.slick-prev:hover,
+.slick-arrow {
+    background: url('./assets/image/slider-arrow.png') no-repeat center;
+    width: 50px;
+    height: 50px;
+}
+
+.slick-next,
+.slick-prev {
+    top: initial;
+    transform: initial;
+}
+
+.slick-prev {
+    left: -60px;
+}
+
+.slick-next {
+    right: -60px;
+    transform: rotate(180deg);
+}
+
+.slick-next:before,
+.slick-prev:before {
+    content: "";
+}
+
+.caption-text .b-rolling-caption__content {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px; 
+    letter-spacing: 1px;  
+    width: max-content;
+}
+.caption-text .b-rolling-caption__content div {
+    display: flex;
+    white-space: nowrap;
+}
+
+.caption-text .b-rolling-caption__content span {
+    color: rgb(238, 114, 27);
+    margin: 0 10px;
+}
+
+.details[open] .details__title {
+    background: #fff;
+    border-bottom: 3px solid rgb(251, 187, 19);
+}
+
+.slider .slider-element {
+    position: relative;
+    height: 788px;
+}
+
+.slider .slider-element .bord {
+    position: absolute;
+    z-index: 0;
+}
+
+.slider .slider-element *:not(img) {
+    z-index: 1;
+    position: relative;
+}
+
+/* Футер */
+
+footer {
+    margin-top: 20px;
+    border-top: 3px solid rgb(251, 187, 19);
+}
+
+.container_r {
+    max-width: 1182px;
+    margin: 0 auto; /* ценmрuруем ее*/
+}
+
+.logo1 {
+    height: auto;
+    max-width: 190px;
+    min-height: 110px;
+}
+
+.crap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1182px;
+    height: 338px; /*/"Задаем выcomу обертки*/
+    padding: 40px 0 40px 0;
+}
+
+crap last-child {
+    margin-right: 0px; /*Убираем поле последнего div-a*/
+}
+
+.bbloki_crap1 {
+    color: rgb(0, 0, 0);
+    width: 264px; /*Фиксируем ширинублока*/
+    text-align: left;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.mip {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.cpap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100px;
+    height: 38px; /*/"Задаем выcomу обертки*/
+    margin-top: 16px;
+}
+
+.filter-yellow {
+    filter: invert(87%) sepia(27%) saturate(4983%) hue-rotate(349deg) brightness(102%) contrast(97%);
+}
+
+.bolz {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 32px;
+    text-align: left;
+}
+
+.menz {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+}
+
+.bbloki_crap2 {
+    color: rgb(0, 0, 0);
+    width: 220px; /*Фиксируем ширинублока*/
+}
+
+.bbloki_crap3 {
+    color: rgb(0, 0, 0);
+    width: 402px; /*Фиксируем ширинублока*/
+}
+
+.tuext {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+/* Кнопка  */
+.btn-up {
+    position: fixed;
+    background-color: rgb(251, 187, 19);
+    right: 20px;
+    bottom: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out;
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+}
+
+.btn-up::before {
+    content: "";
+    width: 50px;
+    height: 40px;
+    background-size: 100% 100%;
+    background-image: url(./assets/image/23.svg);
+}
+
+.btn-up_hide {
+    display: none;
+}
+
+.btn-up_hiding {
+    opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .btn-up:hover {
+      background-color: #ef6c00;
+}
+}
+
+/* Полиграфия */
+
+.container_miumiu {
+    max-width: 1288px;
+    margin: 0 auto; /* ценmрuруем ее*/
+}
+
+.breadcrumb {
+    font-size: 13px;
+    background-color: #fff;
+    padding: 0.75rem 0 0;
+    margin-bottom: 0;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    border-radius: 0.25rem;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+dl, ol, ul {
+    margin-top: 0;
+}
+
+div ol li a {
+    text-decoration: none;
+    color: black;
+}
+
+.kiokio {
+    margin-bottom: 20px;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.cont_crug {
+    max-width: 1288px;
+    margin: 0 auto; /* ценmрuруем ее*/
+    padding: 33px 45px 20px 45px;
+    margin-bottom: 21px;
+    border: 3px solid rgb(251, 187, 19);
+    border-radius: 20px;
+}
+
+.mipmip {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    height: 38px; /*/"Задаем выcomу обертки*/
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 230px;
+}
+
+.tuatua {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    max-width: 750px;
+    height: 506px; /*/"Задаем выcomу обертки*/
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+}
+
+/* Контакты */
+
+.kikio {
+    margin-top: -15px;
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 49px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.mipmip {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1120px;
+    height: 460px; /*/"Задаем выcomу обертки*/
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 2px;
+    text-align: center;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.mipmip1 {
+    display: flex;
+    justify-content: space-between;
+    max-width: 920px;
+    height: 270px; /*/"Задаем выcomу обертки*/
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 2px;
+    text-align: center;
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.cont_actual {
+    max-width: 1341px;
+    margin: 0 auto;
+}
+
+.bblock_act {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1341px;
+    height: 180px; /*/"Задаем выcomу обертки*/
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: center;
+
+
+    color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.nbblock_act1 {
+    background-color: rgb(251, 187, 19);
+    border-radius: 20px;
+    padding: 24px 24px 0 29px; 
+    width: 635.5px;
+    margin-right: 35px;
+}
+
+.nbblock_act2 {
+    background-color: rgb(251, 187, 19);
+    border-radius: 20px;
+    padding: 24px 27px 0 19px;
+    width: 635.5px;
+}
+
+/* Полиграфия */
+
+.conta_t {
+    max-width: 1264px;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 345px 345px 345px;
+    grid-template-rows: 438px 438px;
+    grid-auto-rows: 1fr;
+    gap: 25px 80px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "s k l"
+      "n m t";
+}
+
+.s { grid-area: s; }
+  
+.k { grid-area: k; }
+  
+.l { grid-area: l; }
+  
+.n { grid-area: n; }
+  
+.m { grid-area: m; }
+  
+.t { grid-area: t; }
+
+/* Отзывы */
+
+.container_reviews {
+    max-width: 1288px;
+    margin: 0 auto; /* ценmрuруем ее*/
+}
+
+.white {
+    border: none; /* Убираем границу для браузера Firefox */
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.review-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-text {
+    width: 100%;
+}
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group .input-text {
+    max-width: 100%;
+    border: 3px solid rgb(251, 187, 19);
+    font-size: 1rem;
+    border-radius: 20px;
+    padding: 21px 23px 21px 23px;
+    min-width: 100%;
+    min-height: 99px;
+    max-height: 99px;
+    outline: none;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    border: 3px solid rgb(251, 187, 19);
+    font-size: 1rem;
+    border-radius: 20px;
+    padding: 21px 0px 21px 23px;
+    outline: none
+}
+
+.buttom_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-button {
+    background-color: #FFB800;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 309px;
+    text-align: center;
+    margin: 0 auto;
+
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #FFA200;
+}
+
+.review {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 3px solid rgb(251, 187, 19);
+    padding: 20px;
+}
+
+.review p {
+    margin: 10px 0;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: #FFB800;
+    margin: 0 5px;
+    font-size: 1.2rem;
+}
+
+.pagination strong {
+    font-size: 1.2rem;
+}
+
+.pagination a:hover {
+    color: #FFA200;
+}
+
+.page-title {
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Стиль для всех выпадающих списков (select) */
+.input-group select {
+    appearance: none; /* Убираем стандартный стиль */
+    -webkit-appearance: none; /* Для Safari */
+    -moz-appearance: none; /* Для Firefox */
+    background-image: url('assets/image/24.svg');
+    background-repeat: no-repeat;
+    background-position: right 20px center; /* Положение стрелки */
+    background-size: 25px 25px; /* Размер стрелки */
+    padding-right: 40px; /* Отступ для текста */
+}
+
+/* Для состояния фокуса у select */
+.input-group select:focus {
+    outline: none; /* Убираем стандартную обводку */
+    border: 3px solid rgb(251, 187, 19); /* Добавляем собственную рамку при фокусе, если нужно */
+}
+
+/* Дополнительно: стили для меньших select, если нужно */
+.input-group select#rating {
+    font-size: 0.9rem; /* Размер шрифта для оценки */
+    padding-right: 30px; /* Регулируем отступ для меньшего select */
+}
+
+/* Стили для выпадающих элементов */
+select option {
+    background-color: #fff; /* Фон */
+    color: #000; /* Цвет текста */
+    font-size: 1rem; /* Размер шрифта */
+    padding: 10px; /* Отступ внутри вариантов */
+    border: none; /* Убираем стандартные рамки */
+}
+
+/* Стиль для выделенного элемента */
+select option:checked {
+    background-color: #FFB800; /* Цвет выделенного элемента */
+    color: #fff; /* Цвет текста выделенного элемента */
+}
+
+/* Убираем outline и box-shadow для option */
+select option:focus {
+    outline: none;   /* Убираем outline при фокусе */
+    box-shadow: none; /* Убираем любые тени */
+}
+
+/* Убираем обводку у select, чтобы фокус не применялся к родительскому элементу */
+input, select, textarea {
+    outline: none !important;  /* Убираем outline для всех форм */
+    box-shadow: none !important; /* Убираем тени */
+}

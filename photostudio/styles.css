@@ -1,0 +1,2744 @@
+/* quick reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--main-font);
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  box-sizing: border-box;
+}
+
+/* Стили для бургер-меню */
+.burger-list {
+  max-height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain; /* Предотвращает скролл страницы при достижении края меню */
+}
+
+/* Отключаем скролл при открытом меню */
+body.menu-open,
+body.black-menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+:root {
+  --main-font: "Montserrat", sans-serif;
+  --alternative-font: "Judson", sans-serif;
+}
+
+@font-face {
+  font-family: "Judson";
+  font-style: normal;
+  font-weight: 400;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Judson"), local("Judson-Regular"),
+    /* Если не получилось, загрузит woff2 */
+      url("./font/jubson/Judson-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Montserrat"), local("Montserrat-Regular"),
+    /* Если не получилось, загрузит woff2 */
+      url("./font/montserrat/Montserrat-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Montserrat-Bold"),
+    /* Если не получилось, загрузит woff2 */
+      url("./font/montserrat/Montserrat-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: local("Montserrat-Medium"),
+    /* Если не получилось, загрузит woff2 */
+      url("./font/montserrat/Montserrat-Medium.ttf") format("ttf");
+}
+
+header {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -1px;
+}
+
+/* шапка */
+.container-header-one {
+  margin: 0 auto;
+  max-width: 1654px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.container-header-one ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 38px;
+  gap: 0 10px;
+}
+
+nav .container-header-one ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.jubson_text {
+  font-family: Judson;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.indent_83px {
+  margin-right: 84px;
+}
+
+/* шапка 2 */
+.container-header-two {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 15px;
+  margin-top: -15px;
+}
+
+.container-for-header-two {
+  margin: 0 auto;
+}
+
+.container-header-two.active {
+  display: flex;
+  opacity: 1;
+}
+
+.container-for-header-two ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 26px;
+}
+
+.container-header-two ul li {
+  margin-right: 12px;
+}
+
+nav .container-for-header-two ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.indent_180px {
+  margin-right: 155px;
+}
+
+.container-header-two-hidden {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+  max-width: 1660px;
+  z-index: 1;
+  color: #000000;
+}
+
+/* интро */
+
+.container_intro {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-image: url(./img/full_background.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1005px;
+}
+
+.container_block_h1 {
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-top: 200px;
+}
+
+.intro_h1 {
+  color: rgb(255, 255, 255);
+  font-family: Judson;
+  font-size: 244px;
+  font-weight: 400;
+  line-height: 281px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+h4 {
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+
+.block_h1_and_h4 {
+  max-width: 618px;
+  text-align: center;
+}
+
+/* Ты и камера */
+.container_you_and_camera {
+  margin: 0 auto;
+  max-width: 1406px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.you_and_camera {
+  color: rgb(0, 0, 0);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 78px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.container-photo_and_booking {
+  display: flex;
+  gap: 0 80px;
+  margin-top: 90px;
+  align-items: center;
+}
+
+.container-two_photo {
+  display: flex;
+  gap: 0 20px;
+}
+
+.img_girls1 {
+  margin-right: 18px;
+}
+
+.booking {
+  color: rgb(0, 0, 0);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 78px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-bottom: 113px;
+}
+
+.text_bold {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.container-background_and_time {
+  display: grid;
+  grid-template-columns: repeat(2, 225px);
+  margin-bottom: 161px;
+  gap: 0 30px;
+}
+
+p {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.black_white_button {
+  padding: 16px 41px;
+  border: 3px solid rgb(0, 0, 0);
+  background-color: #fff;
+  cursor: pointer;
+
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+/* .black_white_button-burger {
+  width: 300px;
+  font-size: 12px;
+} */
+
+/* Форматы студии */
+
+.container-format_photo {
+  margin: 0 auto;
+  max-width: 1532px;
+  margin-top: 90px;
+}
+
+.center {
+  text-align: center;
+}
+
+.container-photo {
+  display: flex;
+  gap: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* relevant styles */
+.img__wrap {
+  position: relative;
+  height: 528px;
+  width: 368px;
+}
+
+.img__description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(88, 88, 88, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  padding-top: 50%;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-align: center;
+
+  /* transition effect. not necessary */
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.img__wrap:hover .img__description {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* как проходит съемка */
+
+.container-how_shooting_going {
+  margin: 0 auto;
+  max-width: 1532px;
+  margin-top: 90px;
+}
+
+.right {
+  text-align: right;
+}
+
+.container-four_blocks {
+  display: flex;
+  gap: 0 167px;
+  flex-wrap: wrap;
+  margin-bottom: 90px;
+}
+
+.one_block,
+.two_block,
+.three_block,
+.four_block {
+  max-width: 254px;
+}
+
+/* картинка студии */
+.container-img {
+  margin: 0 auto;
+  max-width: 1532px;
+  margin-top: 90px;
+}
+
+.studio_img {
+  width: 100%;
+  background-size: contain;
+}
+
+/* Отзывы */
+
+.container-reviews {
+  margin: 0 auto;
+  max-width: 1532px;
+  margin-top: 90px;
+}
+
+.container-four_blocks_reviews {
+  display: flex;
+  justify-content: space-between;
+}
+
+.one_block_review,
+.two_block_review,
+.three_block_review,
+.four_block_review {
+  max-width: 257px;
+}
+
+/* сертификат */
+
+.container-certificate {
+  margin: 0 auto;
+  max-width: 1516px;
+  background-color: #484848;
+  margin-top: 90px;
+  padding: 45px 45px 45px 38px;
+}
+
+.container-two_blocks_certificate {
+  display: flex;
+  justify-content: space-between;
+}
+
+.white {
+  color: #fff;
+}
+
+.one_block_certificate {
+  max-width: 783px;
+}
+
+/* FAQ */
+
+.container-faq {
+  margin: 0 auto;
+  max-width: 1532px;
+  margin-top: 90px;
+}
+
+.accordion {
+  margin: 0 auto;
+  max-width: 840px;
+}
+
+.black_white_button_faq {
+  padding: 17px 42px;
+  border: 3px solid rgb(0, 0, 0);
+  background-color: #fff;
+  cursor: pointer;
+
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  width: 100%;
+}
+
+.container-button {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.tab input,
+.tab-content {
+  display: none;
+}
+.tab {
+  border-bottom: 3px solid #000000; /* Параметры рамки */
+  border-radius: 3px; /* Скругляем уголки */
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  margin-bottom: 30px;
+}
+.tab-title {
+  padding: 0 30px 30px 30px; /* Поля вокруг текста */
+  display: block; /* Блочный элемент */
+  text-transform: uppercase; /* Все буквы заглавные */
+  cursor: pointer; /* Вид курсора */
+}
+.tab-title::after {
+  content: ""; /* Выводим плюс */
+  float: right; /* Размещаем по правому краю */
+}
+.tab-content {
+  padding: 10px 20px; /* Поля вокруг текста */
+}
+.tab :checked + .tab-title {
+  border-radius: 3px 3px 0 0; /* Скругляем уголки */
+}
+.tab :checked + .tab-title::after {
+  content: ""; /* Выводим минус */
+}
+.tab :checked ~ .tab-content {
+  display: block; /* Показываем содержимое */
+}
+
+.grey {
+  color: gray;
+}
+
+/* Контакты */
+
+.container-contacts {
+  margin: 0 auto;
+  max-width: 1532px;
+  margin-top: 90px;
+}
+
+.two-blocks-contacts {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.indent_62px {
+  margin-left: 62px;
+}
+
+.padding_10 {
+  padding-top: 10px;
+  padding-bottom: 14px;
+}
+
+.indent_12 {
+  margin-bottom: -10px;
+  margin-left: 15.5px;
+}
+
+.black_white_button_contacts {
+  padding: 16px 41px;
+  border: 3px solid rgb(0, 0, 0);
+  background-color: #fff;
+  cursor: pointer;
+
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.black_white_button_whatsapp {
+  border: 3px solid rgb(0, 0, 0);
+  background-color: #fff;
+  cursor: pointer;
+
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+  padding: 10.49px 41px 16.49px 41px;
+  width: 100%;
+}
+
+/* футер */
+
+footer {
+  background-color: #484848;
+  margin-top: 90px;
+}
+
+.container-footer {
+  margin: 0 auto;
+  max-width: 1597px;
+  padding-top: 45px;
+  padding-bottom: 220px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container-footer a,
+.container-footer {
+  color: #fff;
+}
+
+.three-blocks-footer {
+  margin: 0 auto;
+  max-width: 1597px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90px;
+}
+
+.font_size_48px {
+  font-family: Judson;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.three-blocks-footer div ul li {
+  margin-bottom: 25px;
+}
+
+.black_button {
+  padding: 11px 42px;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: #484848;
+  cursor: pointer;
+
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+}
+
+/* Оставить заявку */
+
+.container-application {
+  margin: 0 auto;
+  max-width: 1525px;
+}
+
+.modal-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 114px;
+  background-color: #ffffff;
+  max-width: 1525px;
+  width: 100vw;
+  display: none;
+  padding: 70px;
+  z-index: 5;
+  transform: translateX(-50%);
+}
+
+.modal-animation {
+  animation-name: animatetop;
+  animation-duration: 0.8s;
+}
+
+@keyframes animatemodal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.modal_h1 {
+  color: rgb(0, 0, 0);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 78px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  position: relative;
+  z-index: 1002;
+  margin-right: 20px;
+}
+
+input {
+  border: 3px solid rgb(0, 0, 0);
+  width: 100%;
+  padding: 18px 0 18px 30px;
+  outline: none;
+}
+
+textarea {
+  border: 3px solid rgb(0, 0, 0);
+  width: 100%;
+  padding: 18px 0 18px 30px;
+  margin-bottom: 35px;
+  outline: none;
+}
+
+#mailing {
+  width: 30px;
+  margin-bottom: 30px;
+}
+
+#processing {
+  width: 30px;
+  margin-bottom: 95px;
+}
+
+.form_p {
+  margin-bottom: 45px;
+  margin-top: 10px;
+}
+
+select {
+  border: 3px solid rgb(0, 0, 0);
+  width: 100%;
+  padding: 18px 18px 18px 30px;
+  outline: none;
+  appearance: none;
+}
+
+.form_application {
+  margin: 0 auto;
+}
+
+.CustomCheckbox {
+  display: none;
+}
+
+.CustomCheckbox + label {
+  position: relative;
+  padding-left: 45px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.CustomCheckbox + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5em;
+  height: 1.5em;
+  border: 3px solid rgba(0, 0, 0, 1);
+}
+
+.CustomCheckbox:checked + label::before {
+  border-color: rgba(0, 0, 0, 1);
+  background-image: url("./img/checkbox.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#custom-checkbox {
+  border: 2.5px solid rgba(0, 0, 0, 1);
+}
+
+.container-button-form {
+  margin: 0 auto;
+}
+
+/* Кнопка наверх */
+
+.btn-up {
+  position: fixed; /* фиксированная позиция */
+  background-color: rgba(255, 255, 255, 0.6); /* цвет заднего фона */
+  right: 20px; /* расстояние от правого края */
+  bottom: 90px; /* расстояние от нижнего края */
+  cursor: pointer; /* форма курсора */
+  display: flex; /* не отображать элемент */
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  width: 55px;
+  height: 55px;
+  opacity: 1;
+  border: 3px solid #000000;
+  z-index: 3;
+}
+
+.btn-up::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  background-image: url("./img/arrow_button.svg");
+}
+
+.btn-up_hide {
+  display: none;
+}
+
+.btn-up_hiding {
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-up:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* цвет заднего фона при наведении */
+  }
+}
+
+/* Запись кнопка */
+
+.btn-application {
+  position: fixed; /* фиксированная позиция */
+  background-color: rgba(255, 255, 255, 0.6); /* цвет заднего фона */
+  right: 20px; /* расстояние от правого края */
+  bottom: 20px; /* расстояние от нижнего края */
+  cursor: pointer; /* форма курсора */
+  display: flex; /* не отображать элемент */
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+  width: 55px;
+  height: 55px;
+  opacity: 1;
+  border: 3px solid #000000;
+  z-index: 3;
+}
+
+.btn-application::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  background-image: url("./img/calendar.svg");
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-application:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* цвет заднего фона при наведении */
+  }
+}
+
+/* Правила посещения */
+
+.container-rules {
+  margin: 0 auto;
+  max-width: 1470px;
+}
+
+.h1_rules {
+  font-family: var(--main-font);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 78px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 90px;
+}
+
+.container-rules-blocks {
+  display: flex;
+}
+
+.rules-block-one {
+  margin-right: 90px;
+}
+
+.indent_90px {
+  margin-bottom: 90px;
+}
+
+/* Обратная связь */
+
+#feedback-message {
+  display: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.container-feedback {
+  margin: 0 auto;
+  max-width: 1525px;
+}
+
+.modal-overlay-feedback {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  display: none;
+}
+
+.modal-feedback {
+  position: absolute;
+  left: 50%;
+  top: 114px;
+  background-color: #ffffff;
+  max-width: 1525px;
+  width: 100vw;
+  display: none;
+  padding: 70px;
+  z-index: 5;
+  transform: translateX(-50%);
+}
+
+.modal-animation-feedback {
+  animation-name: animatetop;
+  animation-duration: 0.8s;
+}
+
+@keyframes animatemodal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.modal_h1 {
+  color: rgb(0, 0, 0);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 78px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.modal-header {
+  width: 100%;
+  position: relative;
+  z-index: 1002;
+  padding: 20px 0;
+}
+
+.close-feedback {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+input {
+  border: 3px solid rgb(0, 0, 0);
+  width: 100%;
+  padding: 18px 18px 18px 30px;
+  outline: none;
+}
+
+textarea {
+  border: 3px solid rgb(0, 0, 0);
+  width: 100%;
+  padding: 18px 10px 18px 30px;
+  margin-bottom: 35px;
+  outline: none;
+}
+
+#mailing {
+  width: 30px;
+  margin-bottom: 30px;
+}
+
+#processing {
+  width: 30px;
+  margin-bottom: 95px;
+}
+
+.form_p {
+  margin-bottom: 45px;
+  margin-top: 10px;
+}
+
+.form_application-feedback {
+  margin: 0 auto;
+  max-width: 1013px;
+}
+
+.CustomCheckbox {
+  display: none;
+}
+
+.CustomCheckbox + label {
+  position: relative;
+  padding-left: 45px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.CustomCheckbox + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5em;
+  height: 1.5em;
+  border: 3px solid rgba(0, 0, 0, 1);
+}
+
+.CustomCheckbox:checked + label::before {
+  border-color: rgba(0, 0, 0, 1);
+  background-image: url("./img/checkbox.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#custom-checkbox {
+  border: 2.5px solid rgba(0, 0, 0, 1);
+}
+
+.container-button-form-feedback {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.black_white_button-feedback {
+  padding: 16px 41px;
+  border: 3px solid rgb(0, 0, 0);
+  background-color: #fff;
+  cursor: pointer;
+
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+}
+
+#error-message {
+  color: red;
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#error-message-booking {
+  color: red;
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#success-message {
+  color: green;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Оплата картой */
+
+.container-pay {
+  margin: 0 auto;
+  max-width: 1013px;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центрирование по вертикали */
+  align-items: center;
+}
+
+.container-button-form-payment {
+  display: flex;
+  justify-content: center;
+}
+
+.black_white_button-payment {
+  padding: 16px 41px;
+  border: 3px solid rgb(0, 0, 0);
+  background-color: #fff;
+  cursor: pointer;
+
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0px;
+}
+
+.error-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  display: none;
+  z-index: 1000;
+  width: 300px;
+  text-align: center;
+  border: 3px solid #000;
+}
+
+#close-error-window {
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  display: none;
+}
+
+/* Спасибо за бронь */
+
+.container-thanks {
+  margin: 0 auto;
+  max-width: 1079px;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центрирование по вертикали */
+  align-items: center;
+}
+
+.burger-label {
+  display: none;
+}
+
+#burger-toggle {
+  display: none;
+}
+
+#burger-toggle-black {
+  display: none;
+}
+
+.burger-logo {
+  display: none;
+}
+
+.burger-list {
+  display: none;
+}
+
+.form_application-feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+.form_application {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+  padding: 0 0 20px 0;
+}
+
+#payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px 0;
+  width: 100%;
+}
+
+.container-button-form {
+  display: flex;
+}
+
+.container-button--center {
+  display: flex;
+}
+
+/* Адаптив */
+.container-header-one,
+.container-header-two {
+  padding-inline: 20px;
+}
+
+@media (max-width: 1800px) {
+  .container_intro {
+    height: 900px;
+  }
+}
+
+@media (min-width: 1980px) {
+  .container_intro {
+    background-size: cover;
+    height: 1200px;
+    margin-bottom: 100px;
+  }
+  .container_block_h1 {
+    margin-top: 400px;
+  }
+}
+
+@media (max-width: 1580px) {
+  .indent_180px {
+    margin-right: 100px;
+  }
+  .container-photo {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2, 368px);
+    gap: 20px;
+  }
+
+  .container-booking {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 528px;
+    width: 320px;
+  }
+
+  .container_intro {
+    height: 800px;
+  }
+
+  .booking {
+    line-height: 1;
+  }
+
+  .container-two_photo {
+    justify-content: center;
+    gap: 0;
+  }
+
+  .container-center {
+    display: flex;
+  }
+
+  .container-header-one ul li a {
+    font-size: 1rem;
+  }
+
+  .container-header-two li a {
+    font-size: 1rem;
+  }
+
+  .intro_h1 {
+    font-size: 8rem;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .indent_83px {
+    margin-right: 40px;
+  }
+
+  .container_block_h1 {
+    margin: 0;
+    margin-top: 15%;
+  }
+
+  .container-four_blocks {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 257px);
+    gap: 20px;
+  }
+
+  .indent_180px {
+    margin-right: 60px;
+  }
+
+  .container-four_blocks_reviews {
+    display: grid;
+    grid-template-columns: repeat(2, 257px);
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .container-contacts {
+    max-width: 1200px;
+  }
+
+  .container-certificate {
+    max-width: 1200px;
+  }
+
+  .black_white_button_contacts {
+    padding: 10px;
+  }
+
+  .black_white_button_whatsapp {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .indent_62px {
+    margin-left: 31px;
+  }
+
+  .indent_12 {
+    width: 30px;
+  }
+
+  .two-blocks-contacts {
+    gap: 0 50px;
+    align-items: center;
+  }
+
+  #map_124150059 {
+    width: 600px;
+  }
+
+  .container-footer {
+    max-width: 1200px;
+  }
+
+  .container {
+    max-width: 1200px;
+    padding-inline: 40px;
+  }
+
+  .container-photo_and_booking {
+    gap: 0 20px;
+  }
+
+  .container-background_and_time {
+    grid-template-columns: 225px;
+    gap: 30px;
+    margin-bottom: 45px;
+  }
+
+  nav .container-for-header-two ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+  }
+  .rules-block-two img {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container_intro {
+    height: 700px;
+  }
+
+  .container-photo_and_booking {
+    margin-top: 45px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 1200px) {
+  .black_white_button {
+    font-size: 14px;
+  }
+
+  .booking-sertificate {
+    text-align: center;
+    margin: 30px auto;
+    font-size: 24px;
+  }
+
+  .two_block_certificate {
+    width: 100%;
+  }
+
+  #error-message-booking {
+    font-size: 0.7rem;
+  }
+
+  .container-certificate {
+    max-width: 92%;
+    margin-top: 60px;
+    padding: 0 30px 30px 30px;
+  }
+
+  .two_block_certificate {
+    width: 100%;
+  }
+
+  .two_block_certificate img {
+    width: 100%;
+  }
+
+  .you_and_camera {
+    font-size: 4rem;
+  }
+
+  .container_you_and_camera {
+    align-items: normal;
+  }
+
+  .img_girls1 {
+    display: none;
+  }
+
+  .container_intro {
+    height: 650px;
+  }
+
+  .container-header-one ul li a {
+    font-size: 0.9rem;
+  }
+
+  .indent_83px {
+    margin-right: 0px;
+  }
+
+  .container_block_h1 {
+    margin-top: 10%;
+  }
+
+  .indent_180px {
+    margin-right: 20px;
+  }
+
+  .container-header-two ul li {
+    margin-right: 10px;
+  }
+
+  .container-two_blocks_certificate {
+    flex-direction: column;
+    gap: 30px 0;
+  }
+
+  .tab-title {
+    font-size: 1rem;
+  }
+
+  .tab-content p {
+    font-size: 1rem;
+  }
+
+  .tab {
+    border-bottom: 2px solid #000;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  .container-header-two li a {
+    font-size: 0.9rem;
+  }
+
+  .modal_h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  .rules-block-two img {
+    width: 45vw;
+  }
+
+  .indent_90px {
+    margin-bottom: 0px;
+  }
+
+  .h1_rules {
+    font-size: 3rem;
+    margin-bottom: 50px;
+  }
+
+  .container-rules-blocks {
+    flex-wrap: wrap;
+    gap: 30px 0;
+  }
+
+  .rules-block-two {
+    display: flex;
+    align-items: center;
+    gap: 0 30px;
+    order: 1;
+  }
+
+  .rules-block-one {
+    margin-right: 0;
+  }
+
+  .responsive-br {
+    display: none;
+  }
+
+  .black_white_button_contacts,
+  .black_white_button_whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav .container-for-header-two ul li a {
+    font-size: 14px;
+  }
+
+  .black_white_button-burger {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container_intro {
+    height: 560px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container-four_blocks {
+    margin-bottom: 60px;
+  }
+
+  .one_block_certificate p {
+    font-size: 18px;
+  }
+
+  .black_white_button-burger {
+    width: 100%;
+  }
+
+  .h1_rules {
+    font-size: 24px;
+    margin-bottom: 30px;
+    line-height: 1;
+  }
+
+  .black_white_button_faq {
+    padding: 8px 20px;
+  }
+
+  .container-thanks p,
+  .container-thanks p a {
+    font-size: 16px;
+  }
+
+  .container-contacts {
+    margin-top: 0;
+  }
+
+  footer {
+    margin-top: 60px;
+  }
+
+  .modal_h1 {
+    margin-bottom: 28px;
+  }
+
+  .error-window {
+    border: 2px solid #000;
+  }
+
+  #error-message {
+    font-size: 12px;
+    margin-bottom: 0px;
+  }
+
+  #close-error-window {
+    font-size: 11px;
+  }
+
+  .black_white_button-payment {
+    border: 2px solid #000;
+    font-size: 16px;
+  }
+
+  .close {
+    padding: 30px 0 43px 48px;
+  }
+
+  .black_white_button {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 auto;
+    border: 2px solid #000;
+  }
+
+  .black_white_button--choose {
+    margin-inline: 0;
+    padding: 9px 20px;
+  }
+
+  .modal-feedback {
+    position: fixed; /* Меняем absolute на fixed */
+    left: 50%;
+    top: 50%; /* Добавляем центрирование по вертикали */
+    transform: translate(-50%, -50%); /* Центрируем полностью */
+    background-color: #ffffff;
+    max-width: 1525px;
+    width: 100vw; /* Заменяем фиксированную ширину */
+    height: 100%;
+    max-height: 100vh; /* Ограничиваем максимальную высоту */
+    display: none;
+    padding: 40px 70px; /* Уменьшаем верхний/нижний padding на мобильных */
+    z-index: 9;
+    overflow-y: auto; /* Скролл при необходимости */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .modal-overlay-feedback {
+    background: white;
+  }
+
+  .container-button-form {
+    margin: 0;
+  }
+
+  .container_intro {
+    background-size: contain;
+  }
+
+  #burger-toggle:checked ~ .burger-list,
+  #burger-toggle-black:checked ~ .burger-list {
+    transform: translateY(0);
+  }
+
+  .container {
+    padding-inline: 20px;
+  }
+
+  .you_and_camera {
+    margin-top: 30px;
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .container-certificate {
+    max-width: 96%;
+    margin-top: 60px;
+    padding: 0 30px 30px 30px;
+  }
+
+  .two_block_certificate {
+    width: 100%;
+  }
+
+  .two_block_certificate img {
+    width: 100%;
+  }
+
+  .container-img {
+    max-width: 100%;
+  }
+
+  .burger-container {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    isolation: isolate;
+  }
+
+  .container-header-one ul {
+    display: none;
+  }
+
+  .container-for-header-two ul {
+    display: none;
+  }
+
+  .container-for-header-two {
+    margin: 0;
+  }
+
+  .burger-label {
+    position: relative;
+    display: block;
+    height: 25px;
+    width: 30px;
+  }
+
+  .burger-label span {
+    position: absolute;
+    top: 11px;
+  }
+
+  .burger-label::after,
+  .burger-label::before,
+  .burger-label span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+    z-index: 1001;
+  }
+
+  .burger-label-black::after,
+  .burger-label-black::before,
+  .burger-label-black span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    transition: 0.3s;
+  }
+
+  .burger-label-reverse::after,
+  .burger-label-reverse::before,
+  .burger-label-reverse span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    transition: 0.3s;
+  }
+
+  .burger-label::before {
+    content: "";
+    top: 0;
+  }
+
+  .burger-label::after {
+    content: "";
+    bottom: 0;
+  }
+
+  #burger-toggle:checked ~ .burger-label::after {
+    transform: rotate(45deg);
+    bottom: 11px;
+    background-color: rgb(0, 0, 0);
+  }
+
+  #burger-toggle:checked ~ .burger-label::before {
+    transform: rotate(-45deg);
+    top: 11px;
+    background-color: rgb(0, 0, 0);
+  }
+
+  #burger-toggle:checked ~ .burger-label span {
+    transform: rotate(-45deg);
+    top: 11px;
+    background-color: rgb(0, 0, 0);
+  }
+
+  #burger-toggle:checked ~ .burger-logo {
+    color: black;
+    z-index: 1001;
+  }
+
+  .burger-list {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding-top: 30px;
+    z-index: -1;
+    top: -100vh;
+    bottom: 100vh;
+    transition: 0.3s;
+    padding-top: 90px;
+    gap: 20px 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding-bottom: 30px;
+    font-size: 20px;
+    font-size: 1rem !important;
+    align-items: center;
+  }
+
+  .burger-list div {
+    gap: 20px 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+  }
+
+  .burger-contact {
+    margin: 20px 0;
+  }
+
+  #burger-toggle:checked ~ .burger-list {
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+
+  #burger-toggle-black:checked ~ .burger-label-black::after {
+    transform: rotate(45deg);
+    bottom: 11px;
+  }
+
+  #burger-toggle-black:checked ~ .burger-label-black::before {
+    transform: rotate(-45deg);
+    top: 11px;
+  }
+
+  #burger-toggle-black:checked ~ .burger-label-black span {
+    transform: rotate(-45deg);
+    top: 11px;
+  }
+
+  #burger-toggle-black:checked ~ .burger-list {
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+
+  #burger-toggle-black:checked ~ .burger-logo-black {
+    z-index: 1001;
+  }
+
+  .burger-logo {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    font-family: Judson;
+  }
+
+  .burger-logo-black {
+    color: black;
+  }
+
+  .burger-container-black {
+    width: 100%;
+  }
+
+  .container-header-two.active {
+    display: block;
+    opacity: 1;
+    width: 100vw;
+  }
+
+  .container-header-two li a {
+    font-size: 11px;
+  }
+
+  .modal {
+    top: 0;
+    width: 100vw;
+  }
+
+  .modal-overlay {
+    background: white;
+  }
+
+  .container_intro {
+    height: 500px;
+  }
+
+  #map_124150059 {
+    width: 500px;
+    height: 361px;
+  }
+
+  .container-photo_and_booking {
+    margin-top: 30px;
+  }
+  .booking {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+
+  .booking-choose {
+    margin: 0 0 30px 0;
+  }
+
+  .booking-sertificate {
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  .burger-button {
+    width: 250px;
+  }
+
+  /* Стили для бургер-меню */
+  .burger-container,
+  .burger-container-black {
+    position: relative;
+    z-index: 1000; /* Убедитесь, что меню поверх других элементов */
+  }
+
+  .burger-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    padding-top: 80px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .burger-list li {
+    font-size: 11px;
+    line-height: 1;
+  }
+
+  #burger-toggle:checked ~ .burger-list,
+  #burger-toggle-black:checked ~ .burger-list {
+    transform: translateY(0);
+  }
+
+  /* Стили для body при открытом меню */
+  body.menu-open,
+  body.black-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  .black_white_button-feedback {
+    padding: 8px 20px;
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid black;
+  }
+
+  .modal-feedback {
+    padding-inline: 30px;
+  }
+}
+
+@media (max-width: 984px) {
+  .container_intro {
+    height: 470px;
+  }
+
+  .black_white_button--choose {
+    border: 2px solid #000;
+  }
+
+  .black_white_button_faq {
+    border: 2px solid #000;
+  }
+
+  #error-message-booking {
+    font-size: 0.7rem;
+  }
+
+  input {
+    border: 2px solid #000;
+  }
+
+  select {
+    border: 2px solid #000;
+  }
+
+  textarea {
+    border: 2px solid #000;
+  }
+
+  .booking-faq {
+    margin-bottom: 30px;
+  }
+
+  .CustomCheckbox + label:before {
+    border: 2px solid #000;
+  }
+
+  .tab-title {
+    font-size: 13px;
+    text-align: start;
+    text-transform: none;
+    font-weight: 500;
+    padding: 0 0 30px 0;
+  }
+
+  .tab-content p {
+    font-size: 0.7rem;
+    text-align: start;
+    text-transform: none;
+    font-weight: 500;
+    padding: 0 0 30px 0;
+  }
+
+  .tab-content {
+    padding: 0;
+  }
+
+  .one-block-contacts p {
+    font-size: 12px;
+  }
+
+  .black_white_button_whatsapp {
+    font-size: 12px;
+  }
+
+  .black_white_button_contacts {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .three-blocks-footer div ul li {
+    font-size: 11px;
+  }
+
+  .black_button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 890px) {
+  .container_intro {
+    height: 450px;
+  }
+}
+
+@media (max-width: 820px) {
+  #map_124150059 {
+    width: 400px;
+    height: 310px;
+  }
+
+  .container_intro {
+    height: 430px;
+  }
+}
+
+@media (min-width: 770px) {
+  .booking-br {
+    display: none;
+  }
+
+  .black_button-footer--hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .close-feedback img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .close img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .container-certificate {
+    max-width: 95%;
+  }
+
+  .one_block_certificate p {
+    font-size: 12px;
+  }
+
+  .black_white_button_contacts {
+    font-size: 12px;
+    margin-bottom: 0;
+    border: 2px solid #000;
+  }
+
+  .black_white_button--choose {
+    border: 2px solid #000;
+  }
+
+  .black_white_button_faq {
+    border: 2px solid #000;
+  }
+
+  #error-message-booking {
+    font-size: 0.7rem;
+  }
+
+  input {
+    border: 2px solid #000;
+    padding: 15px;
+  }
+
+  select {
+    border: 2px solid #000;
+  }
+
+  textarea {
+    border: 2px solid #000;
+  }
+
+  .black_white_button_whatsapp {
+    font-size: 12px;
+    border: 2px solid #000;
+  }
+
+  .black_white_button-feedback {
+    font-size: 12px;
+  }
+
+  .black_white_button-payment {
+    font-size: 12px;
+    padding: 12px 38px;
+  }
+
+  .black_button-footer {
+    display: none;
+  }
+
+  .font_size_48px {
+    font-size: 16px;
+  }
+
+  .container-footer li,
+  a {
+    font-size: 11px;
+  }
+
+  .two-block-footer {
+    margin-bottom: 30px;
+    width: 280px;
+  }
+
+  /* .p-br {
+    display: none;
+  } */
+
+  .rules-block-one p {
+    font-size: 11px;
+  }
+
+  .h1_rules {
+    font-size: 24px;
+    margin-bottom: 15px;
+    line-height: 1;
+  }
+
+  .rules-block-two {
+    display: none;
+  }
+
+  .container-img {
+    margin-top: 30px;
+  }
+
+  .container-photo_and_booking {
+    justify-content: start;
+    padding-inline: 0 !important;
+    width: 100%;
+  }
+
+  .intro_h1 {
+    font-size: 4.5rem;
+  }
+
+  .container-booking {
+    padding-inline: 0;
+    min-height: 381px;
+    width: 100%;
+  }
+
+  .container-background p {
+    font-size: 11px;
+  }
+
+  .container-time p {
+    font-size: 11px;
+  }
+
+  .text_bold {
+    font-size: 12px !important;
+    line-height: normal;
+  }
+
+  .container-photo_two img {
+    width: 267px;
+  }
+
+  .container-contacts {
+    margin-top: 30px;
+  }
+
+  .you_and_camera {
+    font-size: 1.9rem;
+    margin-left: 0;
+    line-height: 1;
+  }
+
+  .container-photo {
+    grid-template-columns: repeat(2, 200px);
+    justify-content: center;
+  }
+
+  .img__description {
+    padding-top: 25%;
+    font-size: 0.8rem;
+    padding-bottom: 5%;
+  }
+
+  .container-how_shooting_going {
+    margin-top: 0;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .container-four_blocks {
+    justify-content: center;
+  }
+
+  .container-reviews {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  .block_review p {
+    font-size: 0.8rem;
+  }
+
+  .two-blocks-contacts {
+    gap: 0 30px;
+  }
+
+  #map_124150059 {
+    height: 270px;
+    width: 400px;
+  }
+
+  .three-blocks-footer {
+    display: grid;
+    grid-template-columns: repeat(2, 250px);
+  }
+
+  .img__wrap {
+    height: auto;
+    width: 200px;
+  }
+
+  .img__img {
+    width: 200px;
+  }
+
+  .two_block_certificate img {
+    width: 100%;
+  }
+
+  .btn-up {
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    border: 2px solid #000;
+  }
+
+  .btn-up::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-application {
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    border: 2px solid #000;
+  }
+
+  .btn-application::before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .container-format_photo {
+    margin-top: 60px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .block p {
+    font-size: 0.8rem;
+  }
+
+  .container-faq {
+    margin-top: 30px;
+  }
+
+  .container_intro {
+    height: 380px;
+  }
+
+  .footer_nav {
+    display: flex;
+  }
+
+  .black_button {
+    font-size: 12px;
+    line-height: 1;
+    width: 100%;
+    border: 2px solid #fff;
+  }
+
+  .three-blocks-footer {
+    margin-top: 30px;
+  }
+
+  .container-background_and_time {
+    margin-top: 100px;
+    margin-bottom: auto;
+    gap: 0 15px;
+    align-content: center;
+    grid-template-columns: repeat(2, 180px);
+  }
+
+  .black_white_button--choose {
+    width: 200px;
+  }
+
+  .container-button-form-feedback {
+    display: flex;
+  }
+
+  .img__description {
+    bottom: 4px;
+  }
+
+  .modal_h1 {
+    font-size: 16px;
+  }
+
+  .form_p {
+    font-size: 11px;
+  }
+
+  label {
+    font-size: 11px;
+    padding-bottom: 10px;
+  }
+
+  .container-thanks p,
+  .container-thanks p a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 740px) {
+  .container_intro {
+    height: 350px;
+  }
+}
+
+@media (max-width: 690px) {
+  .black_white_button--choose {
+    width: 100%;
+    margin: 0;
+  }
+  .container_intro {
+    height: 320px;
+  }
+
+  #map_124150059 {
+    width: 300px;
+  }
+
+  .two-blocks-contacts {
+    gap: 0 15px;
+  }
+
+  .container-background_and_time {
+    grid-template-columns: 225px;
+    gap: 30px;
+    margin-top: 0;
+    margin-bottom: 138px;
+    align-items: start;
+  }
+
+  .black_white_button--choose {
+    width: 100%;
+  }
+}
+
+@media (max-width: 630px) {
+  .container_intro {
+    height: 300px;
+  }
+
+  .two-blocks-contacts {
+    flex-direction: column;
+    gap: 30px 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .container-certificate {
+    max-width: 90%;
+  }
+
+  .container-button-form-feedback {
+    width: 100%;
+  }
+
+  #error-message-booking {
+    font-size: 0.7rem;
+  }
+
+  input {
+    border: 2px solid #000;
+  }
+
+  select {
+    border: 2px solid #000;
+  }
+
+  textarea {
+    border: 2px solid #000;
+  }
+
+  .three-blocks-footer {
+    grid-template-columns: 250px;
+  }
+
+  .black_white_button-payment {
+    margin-top: 30px;
+    width: 100%;
+    border: 2px solid #000;
+  }
+
+  .h1_rules {
+    font-size: 16px;
+  }
+
+  .CustomCheckbox + label:before {
+    border: 2px solid rgba(0, 0, 0, 1);
+  }
+
+  .h1_thank {
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+
+  .two-block-footer {
+    width: 280px;
+  }
+
+  .black_white_button {
+    width: 100%;
+  }
+
+  p {
+    font-size: 0.7rem;
+  }
+
+  #error-message {
+    font-size: 12px;
+  }
+
+  #close-error-window {
+    font-size: 11px;
+  }
+
+  .container_intro {
+    background-image: url(./img/mobile_bg.jpeg);
+    background-size: cover;
+    background-position: 65% center;
+    height: 480px;
+  }
+
+  .footer-contact {
+    margin: 45px 0 !important;
+  }
+
+  .container-time p {
+    font-size: 0.7rem;
+  }
+
+  .container_block_h1 {
+    display: flex;
+    padding-left: 15%;
+    padding-top: 30%;
+  }
+
+  .black_white_button_faq {
+    font-size: 1rem;
+    width: 100%;
+    border: 2px solid rgb(0, 0, 0);
+  }
+
+  .container_you_and_camera {
+    margin-top: 10%;
+  }
+
+  .one_block_certificate p {
+    font-size: 0.8rem;
+  }
+
+  .modal_h1 {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .modal {
+    padding: 0;
+  }
+
+  ::placeholder {
+    font-size: 0.7rem;
+  }
+
+  #mailing {
+    margin-bottom: 20px;
+  }
+
+  .font_size_48px {
+    font-size: 1rem;
+  }
+
+  .three-blocks-footer {
+    margin-top: 30px;
+  }
+
+  .three-blocks-footer ul li {
+    font-size: 11px !important;
+  }
+
+  .container-img {
+    margin-top: 30px;
+  }
+
+  .container-photo_and_booking {
+    justify-content: start;
+    padding-inline: 0 !important;
+    flex-direction: column;
+  }
+
+  .black_white_button {
+    font-size: 0.7rem;
+    font-weight: 500;
+    border: 2px solid #000;
+  }
+
+  .intro_h1 {
+    font-size: 4.5rem;
+  }
+
+  .container-booking {
+    padding-inline: 0;
+    min-height: 0;
+  }
+
+  .booking {
+    font-size: 0.9rem;
+  }
+
+  .container-photo_two {
+    display: none;
+  }
+
+  .you_and_camera {
+    font-size: 1rem;
+    margin-left: 0;
+    line-height: 1;
+    margin-top: 0px;
+  }
+
+  .container-photo {
+    grid-template-columns: 200px;
+    justify-content: center;
+  }
+
+  .img__description {
+    padding-top: 25%;
+    font-size: 0.8rem;
+    padding-bottom: 5%;
+  }
+
+  .container-how_shooting_going {
+    margin-top: 0;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .container-four_blocks {
+    grid-template-columns: 260px;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  .container-reviews {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  .block_review p {
+    font-size: 0.8rem;
+  }
+
+  .container-four_blocks_reviews {
+    grid-template-columns: 257px;
+  }
+
+  .two-blocks-contacts {
+    flex-direction: column;
+    gap: 30px 0;
+  }
+
+  #map_124150059 {
+    width: 100%;
+  }
+
+  .two-block-contacts {
+    width: 100%;
+  }
+
+  .three-blocks-footer {
+    flex-direction: column;
+  }
+
+  .img__wrap {
+    max-width: 200px;
+  }
+
+  .img__img {
+    width: 200px;
+  }
+
+  .two_block_certificate img {
+    width: 100%;
+  }
+
+  .btn-up {
+    width: 40px;
+    height: 40px;
+    right: 21px;
+  }
+
+  .btn-up::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-application {
+    width: 40px;
+    height: 40px;
+    right: 21px;
+  }
+
+  .btn-application::before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .container-format_photo {
+    margin-top: 60px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .block p {
+    font-size: 0.8rem;
+  }
+
+  .container-faq {
+    margin-top: 30px;
+  }
+
+  .container-contacts {
+    margin-top: 30px;
+  }
+
+  .black_white_button_faq {
+    padding: 10px;
+  }
+
+  .container-background_and_time {
+    margin-bottom: 45px;
+  }
+
+  .container-four_blocks_reviews {
+    grid-template-columns: 260px;
+    justify-content: center;
+  }
+
+  .block_review {
+    width: 100%;
+  }
+
+  .three-blocks-footer {
+    margin-inline: 0;
+  }
+
+  .one-block-contacts {
+    width: 100%;
+  }
+
+  .block {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .container-thanks p,
+  .container-thanks p a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container_intro {
+    background-image: url(./img/mobile-bg2.jpeg);
+    background-size: contain;
+    height: 480px;
+  }
+  .container_block_h1 {
+    padding-left: 0;
+  }
+
+  .container-four_blocks_reviews {
+    justify-content: start;
+  }
+
+  .container-four_blocks {
+    justify-content: start;
+  }
+}
