@@ -1,9 +1,24 @@
-const CACHE="pwa-cache-v1";
-const FILES=["/","/index.html","/style.css","/manifest.json"];
-self.addEventListener("install",e=>{
- e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES)));
- self.skipWaiting();
+const CACHE_NAME = "resume-cache-v1";
+
+const URLS = [
+  "/",
+  "/index.html",
+  "/style.css",
+  "/manifest.json"
+];
+
+// Установка SW и кеширование
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(URLS))
+  );
 });
-self.addEventListener("fetch",e=>{
- e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)));
+
+// Работа оффлайн
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
 });
