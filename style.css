@@ -283,6 +283,17 @@ footer p {
     color: #7f5673;
 }
 
+footer a {
+    color: #7f5673;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+footer a:hover {
+    color: #a67a94;
+    text-decoration: underline;
+}
+
 
 /* ===========================
    Адаптивность
