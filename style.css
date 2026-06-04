@@ -255,6 +255,32 @@ section article:hover {
 }
 
 /* ===========================
+   Секция хакатонов
+=========================== */
+
+#hackathons {
+    display: grid;
+    gap: 20px;
+}
+
+@media (min-width: 700px) {
+    #hackathons {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+#hackathons .glass-card h3 {
+    color: #7f5673;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+#hackathons .glass-card p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* ===========================
    Aside
 =========================== */
 

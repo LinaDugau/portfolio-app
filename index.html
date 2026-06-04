@@ -35,6 +35,7 @@
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#skills">Навыки</a></li>
                 <li><a href="#education">Образование</a></li>
+                <li><a href="#hackathons">Хакатоны</a></li>
                 <li><a href="#portfolio">Портфолио</a></li>
                 <li><a href="#contacts">Контакты</a></li>
             </ul>
@@ -74,9 +75,62 @@
             <h2>Образование</h2>
 
             <article class="glass-card">
-                <h3>Нижневаровский социально-гуманитарный колледж (НСГК)</h3>
+                <h3>Нижневартовский социально-гуманитарный колледж (НСГК)</h3>
                 <p><strong>Годы обучения:</strong> 2022–2026</p>
                 <p><strong>Специальность:</strong> Информационные системы и программирование</p>
+            </article>
+        </section>
+
+        <!-- Хакатоны и кейс-чемпионаты -->
+        <section id="hackathons">
+            <h2>Участие в хакатонах и кейс-чемпионатах</h2>
+
+            <article class="glass-card">
+                <h3>Хакатон от MAX и VK Education 2025</h3>
+                <p><strong>Статус:</strong> Финалистка</p>
+                <p>В команде создала MVP сервиса FocusHelper для платформы MAX: чат-бот и PWA-приложение для управления задачами и повышения концентрации. Участвовала в разработке frontend и backend частей, проектировании пользовательских сценариев, интеграции AI-помощника (OpenRouter API), реализации Pomodoro-трекера, системы достижений и синхронизации данных через FastAPI.</p>
+            </article>
+
+            <article class="glass-card">
+                <h3>Альфа-Будущее Хакатон 2025</h3>
+                <p><strong>Статус:</strong> Участница</p>
+                <p>Разработала MVP ИИ-ассистента Alpha для автоматизации операционных задач малого бизнеса. Кросс-платформенная архитектура: мобильное приложение на Expo/React Native и веб-версию на Vite/React. Интегрировала локальную LLM (Meta Llama 3.1 8B), систему контекстных ролей, голосовой ввод, парсинг документов и шифрование чатов (AES-GCM). Упаковала решение в Docker для быстрого деплоя.</p>
+            </article>
+
+            <article class="glass-card">
+                <h3>AI Devtools Hack | TestOps 2025</h3>
+                <p><strong>Статус:</strong> Участница</p>
+                <p>Разработала MVP интеллектуального ИИ-ассистента для автоматизации QA-процессов. Спроектировала FastAPI-сервис с асинхронной работой с LLM Cloud.ru Evolution, системой Jinja-промптов под 6 режимов генерации тестов. Реализовала парсер OpenAPI v3, валидатор Allure-стандартов, интеграцию с GitLab API. Покрытие unit-тестами 92%.</p>
+            </article>
+
+            <article class="glass-card">
+                <h3>Lenta Tech Life Hack 2026</h3>
+                <p><strong>Статус:</strong> Финалистка</p>
+                <p>В команде «Медвежата» разработала CV-решение ShelfVision для автоматического распознавания ценников с 4K-видео робота. Спроектировала end-to-end pipeline: детекция ценников (YOLOv8), OCR-ансамбль (EasyOCR + PaddleOCR), декодирование штрихкодов, LLM-обогащение (Qwen2.5-3B), матчинг по EAN с каталогом SKU (604k позиций). Production-стек: FastAPI + Celery + Redis + Streamlit в Docker.</p>
+            </article>
+
+            <article class="glass-card">
+                <h3>Моя профессия ИТ 2025 — Региональный этап</h3>
+                <p><strong>Статус:</strong> Победитель (1 место)</p>
+                <p>Разработала Mystik — кросс-платформенное приложение для эзотерики и самопознания. Full-stack разработка: React Native + Expo, backend на Node.js + Express с MySQL, система авторизации, Premium-подписка. Интегрировала гороскопы, 6 раскладов таро, матрицу судьбы и 4 психологических теста. Деплой через Docker и EAS Build.</p>
+            </article>
+
+            <article class="glass-card">
+                <h3>Моя профессия ИТ 2025 — Окружной этап</h3>
+                <p><strong>Статус:</strong> Призёр (2 место)</p>
+                <p>Создала AurСад — мобильное приложение-детектор свежести яблок с CV и ML для ОС Аврора. Архитектура на C++11 с UI на Qt 5 + QML, пайплайн обработки изображений, ML-классификатор (Random Forest через MLPack). Локальное дообучение модели на устройстве. Сборка через Conan, mb2 и RPM-пакетирование под armv7hl.</p>
+            </article>
+
+            <article class="glass-card">
+                <h3>Моя профессия ИТ 2025 — Стартовый онлайн хакатон</h3>
+                <p><strong>Статус:</strong> Победитель (1 место)</p>
+                <p>Разработала Drivee Smart Pricing — веб-приложение для ML-прогнозирования оптимальной цены бида в такси. Backend на Python (Flask) с ML-моделью, frontend с интерактивной картой (Leaflet/OSM). Алгоритм поиска «золотой середины» цены, максимизирующей ожидаемый доход, с визуализацией сценариев.</p>
+            </article>
+
+            <article class="glass-card">
+                <h3>Моя профессия ИТ 2025 — Гранд финал</h3>
+                <p><strong>Статус:</strong> Финалистка (Топ-10)</p>
+                <p>Разработала MVP self-service аналитической платформы (NL2SQL) для бизнес-пользователей. Full-stack + LLM разработка (Python, React, SQL, Docker). Реализовала механизмы безопасности (guardrails) на базе sqlglot/sqlparse, семантический слой и модуль автоматической визуализации данных.</p>
             </article>
         </section>
 
@@ -119,7 +173,7 @@
                 </article>
             </a>
 
-            <a href="https://linadugau-mystik-365c.twc1.net" class="glass-card-link" target="_blank" rel="noopener noreferrer">
+            <a href="https://linadugau-mystik-9b7d.twc1.net/" class="glass-card-link" target="_blank" rel="noopener noreferrer">
                 <article class="glass-card">
                     <h3>Кросс-платформенное мобильное приложение и сайт Mystik</h3>
                     <p>Современное веб-приложение эзотерической тематики с адаптивным дизайном для всех устройств.</p>
@@ -154,7 +208,7 @@
         <p><strong>Email:</strong> AngelDmi2006@outlook.com</p>
         <p><strong>Telegram:</strong> <a href="https://t.me/AngelVul" target="_blank" rel="noopener noreferrer">@AngelVul</a></p>
         <p><strong>GitHub:</strong> <a href="https://github.com/LinaDugau" target="_blank" rel="noopener noreferrer">https://github.com/LinaDugau</a></p>
-        <p>&copy; 2025 Ангелина</p>
+        <p>&copy; 2026 Ангелина</p>
     </footer>
 
 
