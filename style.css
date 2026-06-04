@@ -308,6 +308,33 @@ section article:hover {
 }
 
 /* ===========================
+   Секция навыков
+=========================== */
+
+#skills {
+    display: grid;
+    gap: 20px;
+}
+
+@media (min-width: 700px) {
+    #skills {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+#skills .glass-card h3 {
+    color: #7f5673;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+#skills .glass-card p {
+    margin: 6px 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* ===========================
    Aside
 =========================== */
 
